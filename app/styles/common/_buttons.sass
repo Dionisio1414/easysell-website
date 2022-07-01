@@ -1,0 +1,147 @@
+@import ../functions/em-calc
+@import ../functions/set-color
+@import ../mixins/short-transition
+
+// General styles for buttons
+
+%reset-button
+    font-family: $HelveticaBold
+    background: transparent
+    outline: none
+    text-decoration: none
+    border: 2px solid transparent
+    cursor: pointer
+
+button, 
+a
+    @extend %reset-button 
+a
+    border: none
+
+.button
+    @extend %reset-button 
+    border-radius: em-calc(30px)
+    padding: em-calc(13px) em-calc(60px)
+    overflow: hidden
+    +short-transition()
+    &_zoom
+        align-items: center
+        font-size: rem-calc(15px)
+        border: none
+        padding: 0
+        border-radius: 0
+        color: set-color(accent-light)
+        .icon
+            margin-right: rem-calc(10px)
+        .txt
+            text-decoration: underline
+    &_toggle
+        position: relative
+        border-color: set-color(orange)
+        &.active
+            .button_icon
+                transform: translateY(-50%) rotate(180deg)
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            background: set-color(orange)
+            width: calc(100% - 50px)
+            height: 100%
+            +short-transition()
+        .button_text
+            position: relative
+            left: -19px 
+            color: #fff
+        .button_icon
+            position: absolute
+            top: 50%
+            right: rem-calc(18px)
+            transform: translateY(-50%) rotate(0deg)
+            z-index: 1
+            +short-transition()
+            .icon
+                fill: set-color(orange)
+                max-width: 20px
+                max-height: 15px
+                transition-delay: .2s
+                +short-transition()
+        &:hover
+            &::before
+                width: 100%
+            .button_icon
+                .icon
+                    fill: #fff
+        &.toggled
+            .button_icon
+                transform: translateY(-50%) rotate(0deg)
+    &_link
+        font-family: $HelveticaRoman
+        padding: 0
+        border-radius: 0
+        border: none
+        text-decoration: underline
+        color: set-color(link-color)
+    &_simple
+        padding: em-calc(15px) em-calc(25px)
+        border-radius: 0
+        color: set-color(accent)
+    &_accent
+        border-color: set-color(accent)
+        color: set-color(accent)
+        &:hover
+            background: set-color(accent)
+            color: #fff
+    &_orange
+        background: set-color(orange)
+        border-color: set-color(orange)
+        color: #fff
+        &:hover
+            background: set-color(dark-orange)
+    &_inverse
+        background: transparent
+        border-color: set-color(orange)
+        color: set-color(orange)
+        &:hover
+            background: set-color(orange)
+            color: #fff
+    &_prev
+        padding: 0
+        border: none
+        color: set-color(accent-light)
+        .button__icon
+            .icon
+                display: inline-block
+                line-height: 1
+                vertical-align: middle
+                margin-right: em-calc(13px)
+                fill: set-color(blue-light)
+                max-width: 1rem
+                max-height: em-calc(26px)
+                +short-transition()
+        &:hover
+            color: set-color(accent)
+            .button__icon
+                .icon
+                    fill: set-color(accent-light)
+    &_next
+        display: flex
+        align-items: center
+        padding: 0
+        border: none
+        color: set-color(prev-button-color)
+        .button__icon
+            margin-left: rem-calc(10px)
+            .icon
+                display: inline-block
+                line-height: 1
+                vertical-align: middle
+                fill: set-color(blue-light)
+                transform: rotate(90deg)
+                +short-transition()
+        &.active
+            .button__icon
+                .icon
+                    transform: rotate(0deg)

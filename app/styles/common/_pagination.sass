@@ -1,0 +1,48 @@
+@import ../mixins/short-transition
+@import ../functions/set-color
+@import ../functions/rem-calc
+
+.pagination
+    margin: rem-calc(50px) 0
+    +lg-block()
+        margin: rem-calc(30px) 0
+    &__list
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 0
+        margin: 0
+        list-style-type: none
+        &--hidden
+            display: none
+        .pagination
+            &__item
+                line-height: 1
+                &:not(:last-child)
+                    margin-right: rem-calc(20px)
+                &-prev,
+                &-next
+                    display: block 
+                    .icon
+                        fill: set-color(blue-light)
+                        max-width: 16px
+                        max-height: 28px
+                        +short-transition()
+                &.is-disabled
+                    pointer-events: none
+                    .icon
+                        fill: rgba(set-color(blue-light), .4)
+                &-next
+                    .icon
+                        transform: rotateY(180deg)
+                &-link
+                    font-size: rem-calc(20px)
+                    color: set-color(accent-light)
+                    +short-transition()
+                    &:hover
+                        color: set-color(accent)
+                &.is-active
+                    .pagination
+                        &__item
+                            &-link
+                                color: set-color(accent)

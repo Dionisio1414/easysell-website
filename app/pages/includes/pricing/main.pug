@@ -1,0 +1,40 @@
+include ../../mixins/tariff
+
+- let firstList = ['Поддержка 24/7', 'до 10 пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let secondList = ['Поддержка 24/7', 'до 30 пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let thirdList = ['Поддержка 24/7', 'Неограниченное количество пользователей', '10 Гб облачного хранилища', 'Статистика'] ;
+- let fourList = ['Поддержка 24/7', 'Неограниченное количество пользователей', '10 Гб облачного хранилища', 'Статистика'];
+
+
+section.pricing
+    .container
+        .row
+            .column
+                .pricing__buttons
+                    a.button.button_prev(href="#")
+                        .button__icon
+                            svg.icon
+                                use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                            | Назад
+    .pricing__tariffs
+        .container
+            .row
+                .column
+                    .pricing__tariffs-content
+                        .caption
+                            h1 Большие результаты
+                        .subcaption
+                            h2 Небольшие инвестиции
+                        .description
+                            p Повседневная практика показывает, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке новых предложений. 
+                .column
+                    .pricing__tariffs-slider
+                        .pricing__tariffs-slide
+                            +tariff('Базовый', '2 500', firstList)
+                        .pricing__tariffs-slide
+                            +tariff('Стандартный', '3 500', secondList)            
+                        .pricing__tariffs-slide 
+                            +tariff('Премиум', '5 500', thirdList)            
+                        .pricing__tariffs-slide
+                            +tariff('Премиум+', '7 500', fourList)       
+

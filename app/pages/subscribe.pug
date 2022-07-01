@@ -1,0 +1,38 @@
+extends common/layout-custom
+block content
+    .nf.subscribePage
+      .nf__header
+        a(href='./').nf__logo
+          img(src='./images/404/logo_main.svg' alt='logo').pic
+        .nf__back
+          a(href='./') Вернуться на сайт
+      .nf__inner
+        .nf__win
+          .subscribePage__title Программа в разработке, запуск через:
+          .subscribePage__timer.timer(data-time="1005001")
+            .subscribePage__days.timer__days.subscribePage__col
+              span.subscribePage__value.timer__value 00
+              span.subscribePage__label.timer__label
+            .subscribePage__hours.timer__hours.subscribePage__col
+              span.subscribePage__value.timer__value 00
+              span.subscribePage__label.timer__label
+            .subscribePage__minutes.timer__minutes.subscribePage__col
+              span.subscribePage__value.timer__value 00
+              span.subscribePage__label.timer__label
+            .subscribePage__seconds.timer__seconds.subscribePage__col
+              span.subscribePage__value.timer__value 00
+              span.subscribePage__label.timer__label
+          .subscribePage__subtitle Подпишись и получи максимальный пакет услуг 
+            strong EasySell 
+            | на год бесплатно:
+          form.subscribePage__form
+            .subscribePage__row(data-row="name")
+              input(type="text" name="name" placeholder="Ваше имя" required)
+            .subscribePage__row(data-row="email")
+              input(type="text" name="email" placeholder="Ваш Email" required)
+            .subscribePage__row(data-row="tel")
+              input(type="text" name="tel" placeholder="+__ (___) ___-__-__" required)
+            button.nf__btn.nf__btn--disabled(type="submit") Подписаться
+            .subscribePage__errors
+      .nf__rec
+      .nf__rec2

@@ -1,0 +1,6 @@
+$fontsize: 16px
+
+@function rem-calc($size, $fontsize : $fontsize) 
+    $fz: $fontsize + 0px
+    $remSize: $size / $fz
+    @return #{$remSize}rem

@@ -1,0 +1,6 @@
+$fontsize: 16px
+
+@function em-calc($size, $fontsize : $fontsize) 
+    $fz: $fontsize + 0px
+    $emSize: $size / $fz
+    @return #{$emSize}em

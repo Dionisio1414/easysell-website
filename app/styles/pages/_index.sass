@@ -1,0 +1,114 @@
+@import ../functions/em-calc
+@import ../functions/rem-calc
+@import ../mixins/short-transition
+@import ../mixins/long-transition
+
+.home
+    display: flex
+    flex-direction: column
+    justify-content: center
+    margin-bottom: rem-calc(100px)
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    +xl-block()
+        display: block
+        height: auto
+        min-height: 0
+        margin-bottom: rem-calc(10px)
+    > .tns-outer
+        transform: scale(.5)
+        opacity: 0
+        transition: .7s ease-in-out
+        +lg-block()
+            transform: none
+            opacity: 1
+        &.loaded
+            opacity: 1
+            transform: scale(1)
+        .tns-nav
+            display: none
+    &-slider
+        opacity: 0
+        // position: relative
+        // z-index: 5
+        // display: flex
+        // margin: 0 0 em-calc(40px) 0
+        padding-top: rem-calc(130px)
+        +long-transition()
+        +small_desktop-block()
+            padding-top: 0
+        &.loaded
+            opacity: 1
+        &__item
+            // flex: 0 1 calc(33.333% - 70px)
+            .picture-wrapper
+                border: em-calc(10px) solid #fff
+                border-radius: em-calc(30px)
+                box-shadow: $boxshadow
+                height: 100%
+                max-height: em-calc(486px)
+                overflow: hidden
+                .picture
+                    width: 100%
+    .banner
+        .wrapper
+            +lg-block()
+                overflow-y: visible
+        &__content
+            +xl-block()
+                padding-right: 0
+            +lg-block()
+                //margin-bottom: 0
+                //opacity: 0
+                +short-transition()
+                &.loaded
+                    opacity: 1
+        &__controls
+            +xl-block()
+                display: none
+        .tns-outer
+            margin-bottom: rem-calc(87px)
+            opacity: 0
+            +short-transition()
+            +md_desktop-block()
+                margin-bottom: rem-calc(32px)
+            &.loaded
+                opacity: 1
+            +md-block()
+                margin-bottom: rem-calc(25px)
+    .banner-wrapper
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        height: calc(100vh - 2px)
+        min-height: calc(100vh - 2px)
+        overflow-x: hidden
+        overflow-y: hidden
+        -ms-overflow-style: none // for ie 11
+        scrollbar-width: none // for firefox
+        +xl-block()
+            top: auto
+            height: calc(100vh - 260px)
+            min-height: calc(100vh - 260px)
+            position: relative
+        +lg-block()
+            //overflow-y: auto
+            // top: 95px
+            // height: calc(100vh)
+            // min-height: calc(100vh)
+            height: auto
+            min-height: 1px
+        &::-webkit-scrollbar
+            background: transparent
+            width: 0
+        .banner
+            +xl-block()
+                // padding-top: rem-calc(120px)
+                height: auto
+                min-height: 45vh
+            +lg-block()
+                position: relative
+        video
+            display: block

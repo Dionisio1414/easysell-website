@@ -1,0 +1,112 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+@import ../functions/pxToPercentage
+
+.sales
+    position: relative
+    margin-bottom: rem-calc(300px)
+    +small_desktop-block()
+        margin-bottom: rem-calc(150px)
+    +lg-block()
+        margin-bottom: rem-calc(250px)
+    +sm-block()
+        margin-bottom: rem-calc(300px)
+    +mobile_m-block()
+        margin-bottom: rem-calc(250px)
+    +mobile_s-block()
+        margin-bottom: rem-calc(200px)
+    .wrapper
+        +wrapper()
+        &-row
+            +row-flex()
+    &__content
+        +col()
+        +size(7)
+        +size-lg(12)
+        +lg-block()
+            margin-bottom: rem-calc(165px)
+        +sm-block()
+            margin-bottom: rem-calc(175px)
+        +mobile_s-block()
+            margin-bottom: rem-calc(135px)
+        .text
+            margin-bottom: rem-calc(45px)
+            .title
+                +title(115px, 'left')
+                +md-block()
+                    padding-left: rem-calc(80px)
+                    &::before
+                        width: rem-calc(60px) 
+                h2,
+                h3
+                    +sm_desktop-block()
+                        font-size: rem-calc(36px)
+                    +md-block()
+                        font-size: rem-calc(32px)
+            p
+                font-family: $HelveticaLight
+                padding-left: rem-calc(135px)
+                color: set-color(text-color)
+                +md-block()
+                    padding-left: rem-calc(80px)
+        .buttons
+            padding-left: rem-calc(135px)
+            +md-block()
+                padding-left: rem-calc(80px)
+            +sm-block()
+                padding-left: 0
+            .button
+                +sm_desktop-block()
+                    padding: rem-calc(13px) rem-calc(45px)
+                +xl-block()
+                    display: block
+                    text-align: center
+                +lg-block()
+                    display: inline-block
+                +md-block()
+                    padding: rem-calc(10px) rem-calc(35px)
+                +sm-block()
+                    width: 100%
+                &:not(:last-child)
+                    margin-right: rem-calc(20px)
+                    +xl-block()
+                        margin-right: 0
+                        margin-bottom: rem-calc(20px)
+                    +lg-block()
+                        margin-right: rem-calc(20px)
+                        margin-bottom: 0
+                    +md-block()
+                        margin-right: rem-calc(10px)
+                    +sm-block()
+                        margin-right: 0
+                        margin-bottom: rem-calc(20px)
+    &__picture
+        position: relative
+        +col()
+        +size(5)
+        +size-lg(12)
+        .picture
+            position: absolute
+            top: 50%
+            left: 1vw
+            transform: translateY(-50%)
+            border: rem-calc(10px) solid #fff
+            border-radius: rem-calc(30px) 
+            box-shadow: $boxshadow 
+            width: 50vw
+            max-height: rem-calc(470px)
+            overflow: hidden
+            +lg-block()
+                left: auto
+                right: calc(50% + 40px)
+                width: 60vw
+            +md-block()
+                right: calc(50% + 10px) 
+                width: 70vw
+            +sm-block()
+                width: 90vw
+                right: calc(15% + 5px) 
+            +mobile_m-block()
+                width: 100vw
+            .pic
+                width: 100%

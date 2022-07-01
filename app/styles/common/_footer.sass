@@ -1,0 +1,186 @@
+@import ../functions/set-color
+@import ../functions/em-calc
+@import ../functions/rem-calc
+@import ../functions/pxToPercentage
+@import ../mixins/short-transition
+
+.footer
+    position: relative
+    background: set-color(blue-light)
+    padding: em-calc(40px) 0 em-calc(20px) 0
+    z-index: 11
+    +sm-block()
+        padding-bottom: rem-calc(30px)
+    &::before
+        content: ""
+        position: absolute
+        left: 0
+        bottom: 0
+        background: set-color(dark-blue)
+        border-radius: 0 rem-calc(110px) 0 0  
+        width: pxToPercentage(545, 1920) //rem-calc(545px)
+        height: calc(100% + 43px)
+        pointer-events: none
+        +lg-block()
+            display: none
+    .container
+        +wrapper()
+        .row
+            +row-flex()
+    &__contacts
+        display: flex
+        flex-direction: column
+        position: absolute
+        top: 0
+        +col()
+        +size(3)
+        +size-lg(4)
+        +size-md(5)
+        +size-sm(6.5)
+        +size-mobile_m(8)
+        +size-mobile_s(9)
+        height: 100%
+        z-index: 5
+        +lg-block()
+            display: block
+            background: set-color(dark-blue)
+            bottom: 100%
+            top: auto
+            border-radius: 0 rem-calc(30px) 0 0  
+            height: auto
+            padding: rem-calc(15px)
+            margin: 0
+        .footer-logo
+            position: relative
+            margin-bottom: auto 
+            +lg-block()
+                margin-bottom: 0
+                padding-right: rem-calc(40px)
+            .logo
+                display: block
+                +lg-block()
+                    max-width: rem-calc(200px)
+                .pic
+                    max-width: 250px
+                    max-height: 55px
+                    object-fit: contain
+                    +lg-block()
+                        width: 100%
+            .expand-button
+                position: absolute
+                top: rem-calc(10px)
+                right: rem-calc(5px)
+                display: none
+                padding: 0
+                border: none
+                +lg-block()
+                    display: block
+        .expand-wrapper
+            overflow: hidden
+            margin-bottom: auto
+            +short-transition()
+            +lg-block()
+                height: 0
+                opacity: 0
+                &.active
+                    padding-top: rem-calc(20px)
+                    height: auto
+                    opacity: 1
+        .contact-list,
+        .social-list
+            .list
+                padding: 0
+                margin: 0
+                list-style-type: none
+        .contact-list
+            margin-bottom: rem-calc(20px)
+            .list
+                &__item
+                    &:not(:last-child)
+                        margin-bottom: rem-calc(10px)
+                    .link
+                        font-family: $HelveticaLight
+                        text-decoration: none
+                        color: #fff
+        .social-list
+            margin-bottom: auto
+            .list
+                display: flex
+                align-items: center
+                &__item
+                    &:not(:last-child)
+                        margin-right: 20px
+                    .link
+                        display: block
+                        .icon
+                            fill: set-color(blue-light)
+                            max-width: em-calc(25px)
+                            max-height: em-calc(25px)
+                            +short-transition()
+                            &:hover
+                                fill: #fff
+    &__navigation
+        +col()
+        +size(8)
+        +size-lg(12)
+        +shift-left(3.8)
+        +shift-sm_desktop-left(3.6)
+        +shift-lg-left(0)
+        +sm-block()
+            width: 100%
+            margin: 0
+        .navigation
+            display: flex
+            justify-content: space-between
+            padding-bottom: rem-calc(30px)
+            border-bottom: 1px solid rgba(set-color(accent), .3)
+            margin-bottom: rem-calc(20px)
+            flex-wrap: wrap
+            +sm-block()
+                padding-left: rem-calc(45px)
+                padding-right: rem-calc(45px)
+            &__item
+                flex: 0 1 calc(25% - 15px)
+                +md-block()
+                    flex: 0 1 calc(50% - 15px)
+                    &:first-child,
+                    &:nth-child(2)
+                        margin-bottom: rem-calc(25px)
+                +sm-block()
+                    flex: 0 1 100%
+                    &:not(:last-child)
+                        margin-bottom: rem-calc(30px)
+                .navigation-title
+                    font-family: $HelveticaMedium
+                    font-size: rem-calc(18px)
+                    margin-bottom: rem-calc(20px)
+                    color: set-color(text-color)
+                .navigation-list
+                    padding: 0
+                    margin: 0
+                    list-style-type: none
+                    &__item
+                        &:not(:last-child)
+                            margin-bottom: rem-calc(20px)
+                        .navigation-link
+                            display: block
+                            font-family: $HelveticaRoman
+                            font-size: rem-calc(18px)
+                            line-height: 1
+                            text-decoration: none
+                            color: set-color(text-color)
+                            &:hover
+                                text-decoration: underline
+        .copyright 
+            +md-block()
+                text-align: center
+            &__text
+                font-family: $HelveticaLight
+                color: set-color(text-color)
+                +sm-block()
+                    font-size: rem-calc(15px)
+
+
+
+                    
+

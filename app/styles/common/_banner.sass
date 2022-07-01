@@ -1,0 +1,267 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+@import ../functions/em-calc
+@import ../functions/pxToPercentage
+@import ../mixins/long-transition
+@import ../mixins/short-transition
+
+.banner
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    position: absolute
+    top: 0
+    left: 0
+    padding: em-calc(130px) em-calc(106px) em-calc(130px) calc(50vw - 770px)
+    width: pxToPercentage(850, 1920)
+    height: 100vh
+    min-height: 100vh
+    z-index: 5
+    +xl-block()
+        position: relative
+    &::before
+        content: ""
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(235, 247, 255, 0.7) 100%)
+        position: absolute
+        width: 100%
+        height: rem-calc(262px)
+        bottom: rem-calc(-262px)
+        left: 0
+        right: 0
+        transform: rotate(180deg)
+        pointer-events: none
+    +long-transition()
+    +md_desktop-block()
+        padding-left: rem-calc(15px)
+        width: 43.08333%
+    +sm_desktop-block()
+        padding-right: rem-calc(25px)
+    +xl-block()
+        //position: relative
+        padding-top: rem-calc(40px)
+        padding-right: em-calc(15px)
+        padding-bottom: rem-calc(40px)
+        height: auto
+        min-height: auto
+        width: 100%
+        bottom: 0
+        display: flex
+        justify-content: center
+    +md-block()
+        padding-top: rem-calc(20px)
+    &::after
+        content: ""
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background: rgba(set-color(light-blue), .7)
+        backdrop-filter: blur(8px)
+        z-index: 1
+    .wrapper
+        position: relative    
+        -ms-overflow-style: none // for ie 11
+        scrollbar-width: none // for firefox
+        overflow-y: auto
+        +xl-block()
+            overflow-y: visible
+        +md-block()
+            display: flex
+            flex-direction: column
+            height: 100%
+            .tns-outer
+                margin-bottom: auto
+        &::-webkit-scrollbar
+            background: transparent
+            width: 0
+    &__arrow
+        position: absolute
+        top: calc(50% + 150px)
+        right: rem-calc(155px)
+        transform: translateY(-50%)
+        z-index: 2
+        pointer-events: none
+        animation: 1s ease-out infinite alternate moveArrow
+        +small_desktop-block()
+            right: rem-calc(60px)
+        +xl-block()
+            //top: rem-calc(100px)
+            top: 15%
+            right: rem-calc(15px)
+            animation: none
+            max-width: rem-calc(55px)
+    &-controls
+        position: relative
+        line-height: 1
+        padding: em-calc(45px) 0
+        z-index: 6
+        +xl-block()
+            display: none
+        .banner-pagination
+            +wrapper()
+            display: flex
+            align-items: center
+            justify-content: space-between
+            &__item
+                background: set-color(light-gray)
+                width: em-calc(135px)
+                height: em-calc(5px)
+                +short-transition()
+                &--active
+                    background: set-color(accent-light)
+                &:hover
+                    background: set-color(accent-light)
+    &__controls,
+    &__content,
+    &__buttons,
+    &__marks,
+    &__socials
+        position: relative
+        z-index: 3
+    &__controls
+        margin-bottom: em-calc(80px)
+        +xl-block()
+            margin-bottom: rem-calc(38px)
+        +md-block()
+            margin-bottom: rem-calc(25px)
+        .button
+            display: inline-block
+    &__content
+        margin-bottom: em-calc(50px)
+        +md_desktop-block()
+            margin-bottom: em-calc(32px)
+        +xl-block()
+            padding-right: rem-calc(55px)
+        +md-block()
+            margin-bottom: em-calc(25px)
+        &-item
+            display: none
+            +lg-block()
+                //display: block
+            &--active
+                display: block
+        h1, 
+        h2
+            margin: 0
+        h1
+            font-family: $HelveticaBold
+            font-size: em-calc(50px)
+            margin-bottom: em-calc(5px)
+            +md_desktop-block()
+                font-size: em-calc(30px)
+            +xl-block()
+                font-size: em-calc(36px)
+            +md-block()
+                font-size: em-calc(32px)
+        h2
+            font-size: em-calc(23px)
+            font-weight: normal
+            margin-bottom: em-calc(23px)
+            +md_desktop-block()
+                margin-bottom: em-calc(16px)
+            +lg-block()
+                margin-bottom: em-calc(15px)
+        p
+            font-family: $HelveticaLight
+            margin: 0
+            color: set-color(text-color)
+            +sm-block()
+                font-size: em-calc(14px)
+            a
+                display: block
+                font-family: $HelveticaLight
+                text-decoration: underline
+                color: set-color(accent)
+    &__buttons
+        display: flex
+        +xl-block()
+            flex-wrap: wrap
+            justify-content: center
+        .button
+            padding: em-calc(13px) em-calc(55px)
+            +md_desktop-block()
+                padding: em-calc(12px) em-calc(35px)
+            +sm_desktop-block()
+                padding: em-calc(12px) em-calc(20px)
+            +xl-block()
+                text-align: center
+            +md-block()
+                width: 100%
+                margin-right: 0!important
+                margin: 15px 0
+            &:first-child
+                margin-right: rem-calc(20px)
+    &__marks
+        display: flex
+        align-items: center
+        margin-bottom: rem-calc(32px)
+        &-link
+            font-family: $HelveticaRoman
+            &:not(:last-child)
+                margin-right: rem-calc(20px)
+        .mark
+            background: rgba(set-color(accent-light), .25)
+            font-size: rem-calc(14px)
+            line-height: 1
+            padding: rem-calc(10px) rem-calc(15px)
+            border-radius: rem-calc(10px)
+            color: set-color(accent)
+            transition: all .2s
+            &:hover
+                background: #9dccff
+                color: #fff
+    &__socials
+        .social-list
+            display: flex
+            align-items: center
+            padding: 0
+            margin: 0
+            list-style-type: none
+            &__item
+                &:not(:last-child)
+                    margin-right: rem-calc(25px)
+            &__link
+                display: inline-block
+                &:hover
+                    .icon
+                        fill: set-color(accent)
+                .icon
+                    max-width: rem-calc(28px)
+                    max-height: rem-calc(28px)
+                    fill: set-color(accent-light)
+                    +short-transition()
+    &__info
+        display: none
+        position: relative
+        margin-bottom: rem-calc(30px)
+        z-index: 3
+        .image
+            .pic
+                width: 100%
+        .sidebar
+            &-wrapper
+                margin-bottom: rem-calc(30px)
+                .navlist
+                    &__item
+                        &-articles
+                            .navlist__link
+                                font-family: $HelveticaBold
+                                text-decoration: none
+        +xl-block()
+            display: block
+
+.banner
+    &[data-step="1"],
+    &[data-step="2"]
+        +xl-block()
+            padding-right: 0
+        .banner__buttons
+            +md_desktop-block()
+                padding-left: 0
+            +lg-block()
+                padding-left: rem-calc(15px)
+
+        

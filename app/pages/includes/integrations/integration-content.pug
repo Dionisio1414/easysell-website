@@ -1,0 +1,49 @@
+- let list = ["Учебные материалы (15)", "Инновации (745)", "Управление (78)", "Продажи (46)", "Клиенты (5)", "Маркетинг (3)"];
+
+include ../../mixins/sidebar
+include ../../mixins/pagination
+
+section.integrations-content
+    .container
+        .row
+            .integrations-content__column 
+                +sidebar(list, false, false, true, true, false, true)
+            .integrations-content__column 
+                .integrations-grid
+                    - for (let i = 1; i <= 15; i++) 
+                        .integrations-grid__item
+                            .integration-card
+                                .integration-card-picture
+                                    img(src="./images/static/integration-type-picture.png" alt="Picture")
+                                .integration-card-arrow
+                                    button.btn-arrow(type="button")
+                                        svg.arrow
+                                            use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+                                .integration-card-content
+                                    .caption
+                                        h2 Название расширения
+                                    .description
+                                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.
+                                .integration-card-popup
+                                    .picture
+                                        img(src="./images/static/integration-type-picture.png" alt="Picture")
+                                        .integration-card-arrow
+                                            button.btn-arrow(type="button")
+                                                svg.arrow
+                                                    use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+                                    .caption 
+                                        h2 Название расширения
+                                    .tab-list
+                                        .tab-list-item Описание
+                                        .tab-list-item Версии
+                                        .tab-list-item Как установить
+                                    .tab-content
+                                        .tab-content-item
+                                            .description.
+                                                Sed pulvinar tortor magna tempor neque quisque. Amet in diam bibendum congue ac faucibus proin. Sed commodo eu vel sed amet a. Velit odio euismod lectus nunc vel maecenas viverra auctor cursus. Pellentesque in congue auctor euismod amet commodo, mauris. Vulputate ornare sed enim, volutpat. Augue pretium vulputate id purus iaculis viverra arcu. Sed faucibus adipiscing volutpat, quam. Ut tellus etiam pellentesque tincidunt turpis vel tellus fermentum. Tincidunt morbi id in nunc quam vitae maecenas dolor. Id viverra gravida in convallis. Nunc, dui, nunc ultrices magna condimentum. Volutpat mi pellentesque condimentum velit, aliquet consectetur velit cursus.
+                                        .tab-content-item
+                                            .description 2
+                                        .tab-content-item
+                                            .description 3
+
+                +pagination(5, 1, 4, 5, arrows)

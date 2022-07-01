@@ -1,0 +1,70 @@
+mixin sidebar(list, articles = false, arrows = false, readonly = false, active = false, flag, integrations = false)
+    if flag === false
+        aside.sidebar
+            nav.sidebar__navigation
+                ul.navlist
+                    each val, index in list
+                        if index === -1 && active === true
+                            li.navlist__item.active
+                                a.navlist__link(href="#")
+                                    span.navlist__link-text= val
+                                    if (arrows === true)
+                                        span.navlist__link-icon
+                                            svg.icon
+                                                use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+                        if index === 0 && articles === true && integrations === false
+                            li.navlist__item.navlist__item-articles
+                                a.navlist__link(href="#") Все статьи
+                                .search
+                                    .search__field
+                                        if (readonly === true)
+                                            input(type="search" name="search" placeholder="Поиск" readonly)
+                                            button.clear(type="button")
+                                        else
+                                            input(type="search" name="search" placeholder="Поиск")
+                        if index === 0 && integrations === true && articles === false
+                            li.navlist__item.navlist__item-articles
+                                a.navlist__link(href="#") Все интеграции
+                                .search
+                                    .search__field
+                                        if (readonly === true)
+                                            input(type="search" name="search" placeholder="Поиск" readonly)
+                                            button.clear(type="button")
+                                        else
+                                            input(type="search" name="search" placeholder="Поиск")
+                        li.navlist__item
+                            a.navlist__link(href="#")
+                                span.navlist__link-text= val
+                                if (arrows === true)
+                                    span.navlist__link-icon
+                                        svg.icon
+                                            use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+    else
+        .sidebar-wrapper
+            .sidebar-wrapper__top
+                a.link(href="#") Все статьи
+                button.arrow(type="button")
+                    svg.icon
+                        use(xlink:href="./images/svg/sprite/sprite.svg#arrow-bottom")
+                .search
+                    .search__field
+                        if (readonly === true)
+                            input(type="search" name="search" placeholder="Поиск" readonly)
+                            button.clear(type="button")
+                        else
+                            input(type="search" name="search" placeholder="Поиск")
+            .sidebar
+                .sidebar__navigation
+                    ul.navlist
+                        each val, index in list
+                            if (index > 0)
+                                li.navlist__item
+                                    a.navlist__link(href="#")
+                                        span.navlist__link-text= val
+                                        if (arrows === true)
+                                            span.navlist__link-icon
+                                                svg.icon
+                                                    use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+
+
+

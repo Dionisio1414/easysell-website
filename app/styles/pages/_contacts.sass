@@ -1,0 +1,125 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+    
+.contacts
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    overflow: hidden
+    +sm_desktop-block()
+        height: 100%
+        min-height: 100%
+        padding-bottom: rem-calc(50px)
+    +xl-block()
+        padding-bottom: rem-calc(100px)
+    +lg-block()
+        padding-bottom: rem-calc(175px)
+    +md-block()
+        padding-bottom: rem-calc(135px)
+    .banner
+        +md_desktop-block()
+            width: 43.08333%
+        &__arrow
+            top: 50%
+            right: rem-calc(90px)
+            transform: translateY(-50%) rotate(-90deg)
+            animation: 1s ease-out infinite alternate moveArrowRight
+            +xl-block()
+                right: rem-calc(35px)
+                transform: translateY(-50%) rotate(0deg)
+                animation: none
+            +lg-block()
+                right: rem-calc(15px)
+        &::before
+            display: none
+    .container
+        height: 100%
+        +wrapper()
+        .row
+            height: 100%
+            +row-flex()
+            .column
+                display: flex
+                align-items: flex-start
+                padding-top: rem-calc(120px)
+                +xl-block()
+                    padding-top: 0
+                +col()
+                .banner
+                    +xl-block()
+                        height: auto
+                        min-height: auto
+                        width: 100%
+                        position: static
+                &:first-child
+                    +size(5.5)
+                    +size-xl(12)
+                    +xl-block()
+                        width: 100%
+                        margin-left: 0
+                        margin-right: 0
+                        margin-bottom: rem-calc(30px)
+                &:last-child
+                    position: relative
+                    z-index: 10
+                    +size(6.5)
+                    +size-xl(12)
+                    +sm_desktop-block()
+                        align-items: flex-start
+    &__form
+        position: relative
+        background: set-color(dark-blue)
+        border-radius: rem-calc(20px) 0 0 rem-calc(20px)
+        padding: rem-calc(30px) 0 rem-calc(50px) rem-calc(30px)
+        flex: 1
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 100%
+            bottom: 0
+            background: set-color(dark-blue)
+            width: 50vw
+            height: 100%
+        .form
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            &__left,
+            &__right
+                flex: 0 1 calc(50% - 15px)
+                +sm_desktop-block()
+                    flex: 0 1 100%
+                .form-row
+                    width: 100%
+            &__right
+                display: flex
+                flex-direction: column
+                align-items: flex-end
+                margin-top: rem-calc(25px)
+                .form-row
+                    &:not(:last-child)
+                        margin-bottom: rem-calc(30px)
+                    &:last-child
+                        text-align: right
+                        margin-top: auto
+                    .button
+                        +sm-block()
+                            width: 100%
+                            padding: rem-calc(10px) rem-calc(35px) rem-calc(10px) rem-calc(35px)
+            &__left
+                background: set-color(accent-light)
+                border-radius: rem-calc(10px)
+                padding: rem-calc(30px) rem-calc(35px) rem-calc(50px) rem-calc(35px)
+                +sm-block()
+                    padding: rem-calc(25px)
+                textarea
+                    border-color: set-color(light-gray)
+                .form-row
+                    &:not(:last-child)
+                        margin-bottom: rem-calc(40px)
+    .banner
+        &__content
+            p
+                font-family: $HelveticaMedium
+                color: set-color(grays)
+            

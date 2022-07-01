@@ -1,0 +1,42 @@
+.compare-table__col .compare-row__col
+	position: relative
+.compare-table__col:first-child .compare-row .icon div
+	position: absolute
+	width: 100%
+	background: #fff
+	z-index: 1
+	padding: 10px
+	box-shadow: 0 0 5px 0px #e8e8e8
+	left: calc(100% - 40px)
+	top: 100%
+.compare-table__col:first-child .compare-row .icon div
+	display: block !important
+	opacity: 0
+	pointer-events: none
+	transition: all .3s
+.compare-table__col:first-child .compare-row .icon:hover div
+	opacity: 1
+	pointer-events: auto
+.sidebar__blogMsg
+	padding: 10px 10px 0 20px
+	color: #546174
+	font-weight: bold
+.form__msg
+	color: #fff
+    text-align: center
+    font-size: 13px
+.form__msg p
+    margin: 5px 0
+.form__msg--quest
+	text-align: left
+	font-size: 14px
+.form__msg--cont, .form__msg--callback
+	width: 100%
+	text-align: right
+	font-size: 14px
+.form__msg--center
+	text-align: center
+.article__notFound
+	text-align: center
+	font-size: 18px
+	color: #546174

@@ -1,0 +1,66 @@
+- let functionalTabs = [ {product: "Товары"}, {crm: "CRM"}, {'speech-bubble': "Документы"}, {money: "Деньги"}, {marketing: "Маркетинг"}, {feedback: "Отчеты"}, {basket: "Интернет магазин"}, {extends: "Расширения"} ];
+- let functionalTabValues = ["Номенклатура", "Категории", "Характеристики товара", "Свойства товара", "Склады", "Закупки", "Поставщики", "Импорт/Экспорт", "Доставки"];
+
+
+section.functional
+    .container
+        .row
+            .functional__content
+                .functional-header
+                    .tabs
+                        .tabs__arrows
+                            button.tabs__arrows-item(type="button")
+                                img.arrow(src="./images/svg/double-arrow.svg" alt="arrow")
+                            button.tabs__arrows-item(type="button")
+                                img.arrow(src="./images/svg/double-arrow.svg" alt="arrow")
+                        .tabs__list
+                            each val, index in functionalTabs
+                                each name, icon in val
+                                    .tabs__list-item
+                                        .icon-wrap
+                                            svg.icon
+                                                use(xlink:href=`./images/svg/sprite/sprite.svg#icon-${icon}`)
+                                        span.text= name   
+                .functional-body
+                    .tabs__content
+                        each val, index in functionalTabs
+                            each name, icon in val
+                                .tabs__content-tab
+                                    .tab-column
+                                        .functional-body__top
+                                            .caption
+                                                h2= name
+                                            .description
+                                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque molestie pharetra lectus maecenas semper pulvinar aliquet ac fermentum. Ridiculus amet.
+                                        .functional-body__tabs
+                                            ul.tablist
+                                                each val in functionalTabValues
+                                                    li.tablist__item
+                                                        a.tablist__link(href="#")= val
+                                                        svg.icon
+                                                            use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+                                            a.button.button_link(href="#") Подробнее о функции "#{name}"
+                                    .tab-column
+                                        .functional-slider__arrows
+                                            button.arrow(type="button")
+                                                img.icon(src="./images/svg/double-arrow.svg" alt="")
+                                            button.arrow(type="button")
+                                                img.icon(src="./images/svg/double-arrow.svg" alt="")
+                                        .functional-slider__wrapper
+                                            each val in functionalTabValues
+                                                .functional-slider__item
+                                                    .functional-slider
+                                                        each val in functionalTabValues
+                                                            .functional-slider__slide
+                                                                .picture-wrapper
+                                                                    img.picture(src="./images/static/main-banner-bg.png" alt="Functional picture")
+                                                                a.button.button_link(href="#") Перейти
+                                                                a.category-link(href="#")= val
+                                                                //- a.button.button_link.button_link--funcDetailMob(href="#") Подробнее о функции "#{name}"
+                                        a.button.button_link.button_link--funcDetailMob(href="#") Подробнее о функции "#{name}"
+                    .tab-buttons
+                        a.button.button_orange(href="#") Начать бесплатно
+            .functional__title
+                .title
+                    h2 Функционал
+

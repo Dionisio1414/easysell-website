@@ -1,0 +1,83 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+@import ../functions/pxToPercentage
+
+.blog
+    .article-wrapper
+        height: 100%
+        .container
+            height: 100%
+            +wrapper()
+            .row
+                height: 100%
+                +row-flex()
+                margin-right: -30px
+                +xl-block()
+                    margin-right: -15px
+                .column
+                    +col()
+                    max-height: 647px
+                    &:first-child
+                        +size(5.22)
+                        +size-xl(12)
+                        margin-right: 0
+                        margin-left: 0
+                        +xl-block()
+                            margin: 0
+                            width: 100%
+                    &:last-child
+                        display: flex
+                        align-items: flex-end
+                        +size(6.78)
+                        +size-xl(12)
+                        +xl-block()
+                            display: none
+                    .banner
+                        max-height: 777px
+                        min-height: unset
+    &__picture
+        flex: 1
+        max-height: rem-calc(521px)
+        // margin-left: -15px
+        .picture
+            width: 100%
+            height: 100%
+    &--article
+        min-height: unset
+        max-height: calc(777px - 130px)
+
+.post
+    margin-bottom: rem-calc(100px)
+    +lg-block()
+        margin-bottom: rem-calc(70px)
+    &__wrapper
+        padding: 0 15px
+        margin: auto
+        width: 100%
+        max-width: pxToPercentage(830, 1540)
+        +xl-block()
+            max-width: pxToPercentage(1200, 1540)
+        +lg-block()
+            padding: 0 rem-calc(15px)
+            max-width: 100%
+    &__content
+        h2, h3, h4
+            font-family: $HelveticaMedium
+            font-size: rem-calc(18px)
+            margin-bottom: rem-calc(15px)
+            color: set-color(accent-light)
+        h2
+            font-size: rem-calc(22px)
+        h4
+            font-size: rem-calc(16px)
+        p
+            font-family: $HelveticaLight
+            line-height: rem-calc(22px)
+            margin-bottom: rem-calc(30px)
+            color: set-color(grays)
+        img
+            width: 100%
+            margin-bottom: rem-calc(30px)
+        
+
+    

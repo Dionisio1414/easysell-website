@@ -1,0 +1,18 @@
+mixin tariff(title, price, list)
+    .tariff
+        .wrapper
+            .tariff__title
+                h4= title
+            .tariff__price
+                .price= price
+                .vallet грн/мес
+            ul.tariff__list(role="list")
+                each val in list
+                    li.tariff__list-item(role="listitem")= val
+            .tariff__links
+                a.button.button_link(href="#") Подробнее
+            if block
+                block
+        .tariff__buttons
+            a.button.button_orange(href="#") Выбрать тариф
+    

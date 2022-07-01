@@ -1,0 +1,101 @@
+@import ../functions/pxToPercentage
+@import ../functions/rem-calc
+@import ../functions/set-color
+@import ../mixins/title
+@import ../mixins/short-transition
+    
+.automation
+    margin-bottom: rem-calc(200px)
+    position: relative
+    +lg-block()
+        margin-bottom: rem-calc(100px)
+    .container
+        +wrapper()
+        .row
+            +row-flex()
+    &__content
+        +col()
+        +size(5)
+        +size-lg(12)
+        +shift-right(1)
+        +shift-lg-right(0)
+        +lg-block()
+            margin-bottom: rem-calc(30px)
+        .caption
+            margin-bottom: rem-calc(28px)
+            h2,
+            h3 
+                font-size: rem-calc(32px)
+                font-family: $HelveticaBold
+        .description
+            h3, 
+            h4
+                font-family: $HelveticaBold
+                font-size: rem-calc(18px)
+                line-height: 1
+                margin-bottom: rem-calc(19px)
+                color: set-color(accent-light)
+            p
+                font-family: $HelveticaLight
+                color: set-color(grays)
+    &__picture
+        position: relative
+        +col()
+        +size(6)
+        +size-lg(12)
+        &::after
+            content: ""
+            background: set-color(accent-light)
+            position: absolute
+            top: 0
+            right: 0
+            border-top-left-radius: rem-calc(100px)
+            width: calc(100% - 120px)
+            height: rem-calc(350px)
+            z-index: -1
+            +lg-block
+                height: rem-calc(135px)
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 100%
+            background: set-color(accent-light)
+            width: 50vw
+            height: rem-calc(350px)
+            +lg-block
+                height: rem-calc(135px)
+        &-item
+            position: relative
+            top: rem-calc(115px)
+            border: em-calc(10px) solid #fff
+            border-radius: em-calc(30px)
+            box-shadow: $boxshadow
+            width: 100%
+            height: 100%
+            max-height: em-calc(418px)
+            max-width: rem-calc(768px)
+            overflow: hidden
+            z-index: 1
+            +xl-block()
+                max-height: rem-calc(300px)
+            +lg-block()
+                max-height: rem-calc(160px)
+                top: rem-calc(43px)
+            .picture
+                width: 100%
+                height: 100%
+    &__bg
+        position: absolute
+        top: 43px
+        right: 0
+        z-index: 1
+        +lg-block()
+            display: none
+        &--m
+            display: none
+            +lg-block()
+                display: block
+                position: absolute
+                top: 16px
+                right: -15px

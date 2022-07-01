@@ -1,0 +1,22 @@
+doctype html
+html(lang="ru")
+    block head
+        head
+            meta(charset="utf-8")
+            title Title your site
+            meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+            meta(content="ie=edge" http-equiv="x-ua-compatible")
+            link(rel="stylesheet" href="css/main.min.css")
+    body    
+        block header
+            include header
+          
+        .content
+            main.main.main--wiki
+                block content
+
+        block footer
+            include footer
+
+        block scripts
+            script(src='js/main.min.js')

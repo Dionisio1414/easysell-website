@@ -1,0 +1,179 @@
+include ../../mixins/tariff
+
+- let frstList = ['Поддержка 24/7', 'до 10 пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let scndList = ['Поддержка 24/7', 'до 30 пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let thrdList = ['Поддержка 24/7', 'Неограниченное количество пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let frList = ['Поддержка 24/7', 'Неограниченное количество пользователей', '10 Гб облачного хранилища', 'Статистика'];
+
+
+
+section.compare
+    .container
+        .row
+            .column
+                .compare-table
+                    .compare-table__col
+                        .compare-heading
+                            .compare-heading__title Базовые возможности
+                        .compare-row
+                            .compare-row__col
+                                .text Количество пользователей
+                        .compare-row
+                            .compare-row__col
+                                .text Облачное хранилище
+                        .compare-row
+                            .compare-row__col
+                                .text Количество товаров
+                        .compare-heading
+                            .compare-heading__title Кастомизация
+                        .compare-row
+                            .compare-row__col
+                                .text Виджет обзоров продуктов
+                                .icon
+                                    svg.pic
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#question")
+                        .compare-row
+                            .compare-row__col
+                                .text Виджет обзоров продуктов
+                                .icon
+                                    svg.pic
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#question")
+                        .compare-row
+                            .compare-row__col
+                                .text Виджет обзоров продуктов
+                                .icon
+                                    svg.pic
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#question")
+                        .compare-row
+                            .compare-row__col
+                                .text Виджет обзоров продуктов
+                                .icon
+                                    svg.pic
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#question")
+                        .compare-row
+                            .compare-row__col
+                                .text Виджет обзоров продуктов
+                                .icon
+                                    svg.pic
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#question")
+                    .compare-table__col
+                        .compare-heading
+                            .compare-heading__tariffs
+                                .compare-tariffs
+                                    .compare-tariffs__item
+                                        .status Рекомендуемый
+                                        +tariff('Базовый', '2 500', frstList)
+                                            .tariff__btns
+                                                a.button.button_orange(href="#") Выбрать тариф
+                                    .compare-tariffs__item.active
+                                        .status Рекомендуемый
+                                        +tariff('Стандартный', '3 500', scndList) 
+                                            .tariff__btns
+                                                a.button.button_orange(href="#") Выбрать тариф    
+                                    .compare-tariffs__item
+                                        .status Рекомендуемый
+                                        +tariff('Премиум', '5 500', thrdList)  
+                                            .tariff__btns
+                                                a.button.button_orange(href="#") Выбрать тариф  
+                                    .compare-tariffs__item   
+                                        .status Рекомендуемый      
+                                        +tariff('Премиум+', '7 500', frList) 
+                                            .tariff__btns
+                                                a.button.button_orange(href="#") Выбрать тариф
+                        .compare-table__wrapper
+                            .wrapper
+                                .compare-row
+                                    .compare-row__col
+                                        .text До 20
+                                    .compare-row__col
+                                        .text До 50
+                                    .compare-row__col
+                                        .text До 100
+                                    .compare-row__col
+                                        .text Неограничено
+                                .compare-row
+                                    .compare-row__col
+                                        .text 6 Гб
+                                    .compare-row__col
+                                        .text 10 Гб
+                                    .compare-row__col
+                                        .text Неограничено          
+                                    .compare-row__col
+                                        .text Неограничено
+                                .compare-row
+                                    .compare-row__col
+                                        .text До 30
+                                    .compare-row__col
+                                        .text До 100
+                                    .compare-row__col
+                                        .text Неограничено
+                                    .compare-row__col
+                                        .text Неограничено
+                                .compare-heading
+                                .compare-row
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                .compare-row
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                .compare-row
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                .compare-row
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+                                .compare-row
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/minus.svg")
+                                    .compare-row__col
+                                        .icon
+                                            img.pic(src="./images/svg/checked.svg")
+
+

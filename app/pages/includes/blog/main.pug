@@ -1,0 +1,60 @@
+- let articleTitles = ["Как правильно использовать CRM ", "Система управления взаимоотношениями с клиентами", "Как правильно использовать CRM ", "Коммуникация с клиентами", "Как правильно использовать CRM "];
+- let mobileList = ["Учебные материалы (15)", "Инновации (745)", "Управление (78)", "Продажи (46)", "Клиенты (5)", "Маркетинг (36)"];
+
+include ../../mixins/sidebar
+
+section.blog
+    .blog-wrapper
+        .container
+            .row
+                .column
+                    .banner
+                        .banner__arrow
+                            img.arrow(src="./images/large-arrow.svg" alt="Large arrow")
+                        .wrapper
+                            .banner__controls
+                                a.button.button_prev(href="#")
+                                    .button__icon
+                                        svg.icon
+                                            use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                                        | Назад
+                            .banner__content
+                                h1 Продавай быстро, анализируй и масштабируй
+                            .banner__info
+                                +sidebar(mobileList, true, false, true, true)
+                                article.article
+                                    .article-column
+                                        a.article__link(href="#")
+                                            img.picture(src="./images/static/article-pic-1.png" alt="Article picture")
+                                    .article-column
+                                        .article__information
+                                            .marks
+                                                mark.mark Учебные материалы
+                                                .date
+                                                    svg.icon
+                                                        use(xlink:href="./images/svg/sprite/sprite.svg#calendar")
+                                                    time 29.09.2020
+                                            .caption
+                                                h2 
+                                                    a(href="#") Как правильно использовать CRM 
+                                            .text
+                                                p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.
+                .column
+                    article.article
+                        .article-column
+                            a.article__link(href="/article.html")
+                                img.picture(src="./images/static/article-pic-1.png" alt="Article picture")
+                        .article-column
+                            .article__information
+                                .marks
+                                    mark.mark Учебные материалы
+                                    .date
+                                        svg.icon
+                                            use(xlink:href="./images/svg/sprite/sprite.svg#calendar")
+                                        time 29.09.2020
+                                .caption
+                                    h2 
+                                        a(href="/article.html") Как правильно использовать CRM 
+                                .text
+                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.
+

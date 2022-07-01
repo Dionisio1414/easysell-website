@@ -1,0 +1,34 @@
+- let planValues = [{feedback: "Отчет о продажах и новых лидах"}, {folder: "Централизованная база данных клиентов"}, {shop: "Настраиваемые продажи и рассылки"}, {share: "Массовая рассылка одним щелчком"}, {call: "Поддержка 24/7 (чат и электронная почта)"}, {checks: "Интеграции с другими сервисами"}]
+
+section.plans
+    .container
+        .row
+            .column
+                .plans__advantages
+                    each plan in planValues
+                        each val, key in plan
+                            .plans__advantages-item
+                                .pic
+                                    svg.icon
+                                        use(xlink:href=`./images/svg/sprite/sprite.svg#icon-${key}`)
+                                .description= val
+                .plans__buttons
+                    button.button.button_toggle(type="button") 
+                        span.button_text Сравнить планы
+                        span.button_icon
+                            svg.icon
+                                use(xlink:href="./images/svg/sprite/sprite.svg#button-arrow")
+            .column
+                .plans__description
+                    .title
+                        h2 Все тарифные планы
+                    .text
+                        p 15-дневная бесплатная пробная версия. Кредитная карта не требуется.
+                    .buttons
+                        button.button.button_toggle(type="button") 
+                            span.button_text Сравнить планы
+                            span.button_icon
+                                svg.icon
+                                    use(xlink:href="./images/svg/sprite/sprite.svg#button-arrow")
+
+                

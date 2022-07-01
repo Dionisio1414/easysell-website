@@ -1,0 +1,21 @@
+@import ../functions/rem-calc
+@import ../functions/set-color
+
+=title($width, $direction)
+    @if $direction == 'left'
+        padding-left: #{calc(#{$width} + 20px)}
+    @else if $direction == 'right'
+        text-align: right
+        padding-right: #{calc(#{rem-calc($width)} + 20px)}
+    &::before
+        content: ""
+        position: absolute
+        top: rem-calc(30px)
+        // transform: translateY(-50%)
+        background: set-color(light-gray)
+        width: rem-calc($width)
+        height: rem-calc(3px)
+        @if $direction == 'left'
+            left: 0
+        @else if $direction == 'right'
+            right: 0

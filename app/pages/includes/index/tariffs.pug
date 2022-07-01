@@ -1,0 +1,23 @@
+include ../../mixins/tariff
+
+- let firstList = ['Поддержка 24/7', 'до 10 пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let secondList = ['Поддержка 24/7', 'до 30 пользователей', '10 Гб облачного хранилища', 'Статистика'];
+- let thirdList = ['Поддержка 24/7', 'Неограниченное количество пользователей', '10 Гб облачного хранилища', 'Статистика'] ;
+- let fourList = ['Поддержка 24/7', 'Неограниченное количество пользователей', '10 Гб облачного хранилища', 'Статистика'];
+
+section.tariffs
+    .container
+        .row
+            .title
+                h2 Тарифы
+        .tariffs__cards
+            .tariff-slider
+                .tariff-slider__item
+                    +tariff('Базовый', '2 500', firstList)
+                .tariff-slider__item
+                    +tariff('Стандартный', '3 500', secondList)
+                .tariff-slider__item            
+                    +tariff('Премиум', '5 500', thirdList)
+                .tariff-slider__item            
+                    +tariff('Премиум+', '7 500', fourList)            
+

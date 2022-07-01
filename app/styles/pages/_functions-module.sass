@@ -1,0 +1,306 @@
+@import ../functions/pxToPercentage
+@import ../functions/rem-calc
+@import ../functions/set-color
+@import ../mixins/title
+@import ../mixins/short-transition
+
+.functions-section
+    margin-bottom: rem-calc(110px)
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    +xl-block()
+        height: auto
+        min-height: auto
+        margin-bottom: rem-calc(50px)
+    .container
+        +wrapper()
+        height: 100%
+        .row
+            +row-flex()
+            height: 100%
+            .column
+                +col()
+                &:first-child
+                    +size(5.22)
+                    +size-xl(12)
+                    +xl-block()
+                        margin: 0
+                        width: 100%
+                &:last-child
+                    position: relative
+                    display: flex
+                    align-items: center
+                    +size(6.78)
+                    +size-xl(12)
+                    +xl-block()
+                        display: none
+        .banner
+            &__arrow
+                right: rem-calc(124px)
+                +xl-block()
+                    right: rem-calc(15px)
+            &__info
+                .pictures
+                    position: relative
+                    height: em-calc(305px)
+                    .picture
+                        width: 100%
+                        height: 100%
+                    &__item
+                        position: absolute
+                        border: em-calc(5px) solid #fff
+                        border-radius: em-calc(10px)
+                        box-shadow: $boxshadow
+                        width: 100%
+                        height: 100%
+                        overflow: hidden
+                        &:first-child
+                            top: 0
+                            left: rem-calc(-140px)
+                            max-height: rem-calc(250px)
+                            max-width: rem-calc(500px)
+                            +sm-block()
+                                left: rem-calc(-65px)
+                                max-width: rem-calc(350px)
+                        &:last-child
+                            top: rem-calc(70px)
+                            left: rem-calc(80px)
+                            max-height: rem-calc(225px)
+                            max-width: rem-calc(350px)
+                            +sm-block()
+                                max-width: rem-calc(300px)
+                            +mobile_m-block()
+                                left: rem-calc(20px)
+                            +mobile_s-block()
+                                left: rem-calc(10px)
+                                max-width: rem-calc(290px)
+                            
+    &__pictures
+        position: relative
+        width: 100%
+        height: 100%
+        &-item
+            position: absolute
+            bottom: rem-calc(130px)
+            border: em-calc(10px) solid #fff
+            border-radius: em-calc(30px)
+            box-shadow: $boxshadow
+            width: rem-calc(1060px)
+            height: 100%
+            max-width: rem-calc(970px)
+            max-height: em-calc(562px)
+            overflow: hidden
+            &:first-child
+                right: 0
+                bottom: rem-calc(147px)
+                border: em-calc(10px) solid #fff
+                border-radius: em-calc(30px)
+                width: rem-calc(1060px)
+                height: 100%
+                max-height: em-calc(562px)
+                z-index: 4
+            &:last-child
+                left: rem-calc(-120px)
+                bottom: rem-calc(50px)
+                border-radius: em-calc(10px)
+                width: rem-calc(737px)
+                height: 100%
+                max-height: em-calc(550px)
+                z-index: 5
+            .picture
+                width: 100%
+                height: 100%
+    
+.functions-module
+    margin-bottom: rem-calc(225px)
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    +xl-block()
+        height: auto
+        min-height: auto
+        //margin-bottom: rem-calc(50px)
+        margin-bottom: 0
+    .container
+        +wrapper()
+        height: 100%
+        .row
+            +row-flex()
+            height: 100%
+            .column
+                +col()
+                &:first-child
+                    +size(5.22)
+                    +size-xl(12)
+                    +xl-block()
+                        margin: 0
+                        width: 100%
+                &:last-child
+                    position: relative
+                    display: flex
+                    align-items: center
+                    +size(6.78)
+                    +size-xl(12)
+                    +xl-block()
+                        display: none
+                .banner
+                    +md_desktop-block()
+                        padding-right: rem-calc(154px)
+                    +xl-block()
+                        padding-right: rem-calc(15px)
+                        position: relative
+                    &__arrow
+                        +md_desktop-block()
+                            right: rem-calc(203px)
+                        +xl-block()
+                            right: rem-calc(15px)
+                            top: 30%
+                    &__info
+                        .pictures
+                            position: relative
+                            height: em-calc(250px)
+                            .picture
+                                width: 100%
+                                height: 100%
+                            &__item
+                                position: absolute
+                                border: em-calc(5px) solid #fff
+                                border-radius: em-calc(10px)
+                                box-shadow: $boxshadow
+                                width: 100%
+                                height: 100%
+                                overflow: hidden
+                                &:first-child
+                                    top: 0
+                                    left: rem-calc(-140px)
+                                    max-height: rem-calc(250px)
+                                    max-width: rem-calc(600px)
+                                    +xl-block()
+                                        position: relative
+                                        margin: 0 auto
+                                    +sm-block()
+                                        left: rem-calc(-65px)
+                                        position: absolute
+    &__pictures
+        position: relative
+        width: 100%
+        height: 100%
+        &-item
+            position: absolute
+            right: 0
+            bottom: rem-calc(130px)
+            border: em-calc(10px) solid #fff
+            border-radius: em-calc(30px)
+            box-shadow: $boxshadow
+            width: rem-calc(1060px)
+            height: 100%
+            max-width: rem-calc(970px)
+            max-height: em-calc(562px)
+            overflow: hidden
+            z-index: 6
+            +small_desktop-block()
+                width: rem-calc(895px)
+            +sm_desktop-block()
+                width: rem-calc(825px)
+            .picture
+                width: 100%
+                height: 100%
+
+.module-section
+    margin-bottom: rem-calc(100px)
+    .container
+        +wrapper()
+        .row
+            +row-flex()
+    &__caption
+        .column
+            +col()
+            +size(6)
+            +shift-left(6)
+            +shift-xl-left(0)
+        .caption
+            margin-bottom: rem-calc(42px)
+            h2
+                font-size: rem-calc(32px)
+                font-family: $HelveticaBold
+                line-height: 1
+    &__content
+        .pictures
+            position: relative
+            height: 100%
+            +xl-block()
+                min-height: rem-calc(390px)
+            &::before
+              content: ""
+              background-image: url(../images/module-section-bg.svg)
+              background-size: contain
+              background-repeat: no-repeat
+              background-position: 0 0
+              position: absolute
+              top: 0
+              bottom: 0
+              right: 0%
+              width: 50vw  
+            &__item
+                position: absolute
+                border-radius: rem-calc(10px)
+                box-shadow: $boxshadow
+                width: 100%
+                height: 100%
+                overflow: hidden
+                .pic
+                    width: 100%
+                    height: 100%
+                &:first-child
+                    top: 0
+                    right: rem-calc(55px)
+                    max-height: rem-calc(333px)
+                    max-width: rem-calc(597px)
+                    +md_desktop-block()
+                        max-width: rem-calc(515px)
+                        max-height: rem-calc(290px)
+                    +sm_desktop-block()
+                        max-width: rem-calc(450px)
+                        max-height: rem-calc(250px)
+                &:last-child
+                    left: 0
+                    top: 30%
+                    max-height: rem-calc(345px)
+                    max-width: rem-calc(625px)
+                    +md_desktop-block()
+                        max-width: rem-calc(550px)
+                        max-height: rem-calc(290px)
+                    +sm_desktop-block()
+                        top: 20%
+                        max-width: rem-calc(480px)
+                        max-height: rem-calc(260px)
+        .benefits-grid
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            margin-bottom: rem-calc(45px)
+            .benefit
+                flex: 0 1 calc(33.333% - 15px)
+                &__buttons
+                    display: none
+        .description
+            h3,
+            h4
+                font-family: $HelveticaMedium
+                font-size: rem-calc(18px)
+                line-height: 1
+                margin-bottom: rem-calc(10px)
+                color: set-color(accent-light)
+            p
+                font-family: $HelveticaLight
+                line-height: rem-calc(22px)
+                color: set-color(grays)
+        .row
+            .column
+                +col()
+                &:first-child
+                    +size(6)
+                    +size-xl(12)
+                &:last-child
+                    +size(6)
+                    +size-xl(12)
+                    

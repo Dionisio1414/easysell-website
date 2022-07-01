@@ -1,0 +1,373 @@
+- let sidebarList = ["Создание номенклатуры", "Создание категории", "Создание характеристики товара", "Создание свойства товара", "Упраление складами и запасами", "Создание документа закупки", "Добавление поставщика", "Импорт/Экспорт", "Управление доставками"];
+- let tabLength = [ {product: "Товары"}, {crm: "CRM"}, {doc: "Документы"}, {money: "Деньги"}, {marketing: "Маркетинг"}, {feedback: "Отчеты"}, {basket: "Интернет магазин"}, {extends: "Расширения"} ];
+
+include ../../mixins/sidebar
+include ../../mixins/benefit
+
+section.wiki-content
+    .wiki-content__outer
+        each val, index in tabLength
+            if (index === 0)
+                .wiki-content__outer-tab.active
+                    .container
+                        .row
+                            .column
+                                .sticky-wrapper
+                                    .sticky-wrapper__item
+                                        +sidebar(sidebarList, false, true, false, true, false)
+                                    .sticky-wrapper__item
+                                        .question-form
+                                            .question-form__header
+                                                .caption Не смогли найти ответ? Задайте свой вопрос:
+                                                button.toggle-form-button
+                                                    svg.icon
+                                                        use(xlink:href=`./images/svg/sprite/sprite.svg#select-arrow`)
+                                            .question-form__body
+                                                form.form
+                                                    .form-row
+                                                        input(type="text" name="name" placeholder="Ваше имя")
+                                                    .form-row
+                                                        input(type="email" name="email" placeholder="Ваш Email")
+                                                    .form-row
+                                                        label(for="message") Опишите вашу проблему или вопрос:
+                                                        textarea(id="message" name="message" rows="5")
+                                                    .form-row
+                                                        button.button.button_orange(type="submit") Отправить вопрос
+                            .column
+                                .wiki-content__inner
+                                    .wiki-content__inner-tab.active
+                                        .anchors
+                                            ul.anchors__list
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#1") Выбор категории
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#2") Добавление информации 
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#3") Указание характеристик
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#4") Заполнение свойств
+                                        .information
+                                            .information__title
+                                                h2 Создание номенклатуры  
+                                            .information__content
+                                                #1.information__content-section
+                                                    h3 Выбор категории
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                    img(src="./images/static/main-banner-bg.png" alt="Content picture")
+                                                    button.button.button_zoom(type="button")
+                                                        img.icon(src="./images/icon-zoom.svg" alt="Zoom icon")
+                                                        span.txt Увеличить 
+                                                #2.information__content-section
+                                                    h3 Добавление информации
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #3.information__content-section
+                                                    h3 Указание характеристик
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #4.information__content-section
+                                                    h3 Заполнение свойств
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                        .benefits-grid
+                                            +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                            +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                            +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+                                    .wiki-content__inner-tab
+                                        .anchors
+                                            ul.anchors__list
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#1") Выбор категории
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#2") Добавление информации 
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#3") Указание характеристик
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#4") Заполнение свойств
+                                        .information
+                                            .information__title
+                                                h2 Создание номенклатуры  
+                                            .information__content
+                                                #1.information__content-section
+                                                    h3 Выбор категории
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                    img(src="./images/static/main-banner-bg.png" alt="Content picture")
+                                                    button.button.button_zoom(type="button")
+                                                        img.icon(src="./images/icon-zoom.svg" alt="Zoom icon")
+                                                        span.txt Увеличить 
+                                                #2.information__content-section
+                                                    h3 Добавление информации
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #3.information__content-section
+                                                    h3 Указание характеристик
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #4.information__content-section
+                                                    h3 Заполнение свойств
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                        .benefits-grid
+                                            +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                            +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                            +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+                                    .wiki-content__inner-tab
+                                        .anchors
+                                            ul.anchors__list
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#1") Выбор категории
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#2") Добавление информации 
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#3") Указание характеристик
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#4") Заполнение свойств
+                                        .information
+                                            .information__title
+                                                h2 Создание номенклатуры  
+                                            .information__content
+                                                #1.information__content-section
+                                                    h3 Выбор категории
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                    img(src="./images/static/main-banner-bg.png" alt="Content picture")
+                                                    button.button.button_zoom(type="button")
+                                                        img.icon(src="./images/icon-zoom.svg" alt="Zoom icon")
+                                                        span.txt Увеличить 
+                                                #2.information__content-section
+                                                    h3 Добавление информации
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #3.information__content-section
+                                                    h3 Указание характеристик
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #4.information__content-section
+                                                    h3 Заполнение свойств
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                        .benefits-grid
+                                            +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                            +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                            +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+                                    .wiki-content__inner-tab
+                                        .anchors
+                                            ul.anchors__list
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#1") Выбор категории
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#2") Добавление информации 
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#3") Указание характеристик
+                                                li.anchors__item
+                                                    span.anchors__icon
+                                                        svg.icon
+                                                            use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                    a.anchors__link(href="#4") Заполнение свойств
+                                        .information
+                                            .information__title
+                                                h2 Создание номенклатуры  
+                                            .information__content
+                                                #1.information__content-section
+                                                    h3 Выбор категории
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                    img(src="./images/static/main-banner-bg.png" alt="Content picture")
+                                                    button.button.button_zoom(type="button")
+                                                        img.icon(src="./images/icon-zoom.svg" alt="Zoom icon")
+                                                        span.txt Увеличить 
+                                                #2.information__content-section
+                                                    h3 Добавление информации
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #3.information__content-section
+                                                    h3 Указание характеристик
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                #4.information__content-section
+                                                    h3 Заполнение свойств
+                                                    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                    p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                        .benefits-grid
+                                            +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                            +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                            +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+            else
+                .wiki-content__outer-tab 
+                    span= index
+                    .container
+                        .row
+                            .column
+                                .sticky-wrapper
+                                    +sidebar(sidebarList, false, true, false, true, false)
+                                    .question-form
+                                        .question-form__header
+                                            .caption Не смогли найти ответ? Задайте свой вопрос:
+                                            button.toggle-form-button
+                                                svg.icon
+                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#select-arrow`)
+                                        .question-form__body
+                                            form.form
+                                                .form-row
+                                                    input(type="text" name="name" placeholder="Ваше имя")
+                                                .form-row
+                                                    input(type="email" name="email" placeholder="Ваш Email")
+                                                .form-row
+                                                    label(for="message") Опишите вашу проблему или вопрос:
+                                                    textarea(id="message" name="message" rows="5")
+                                                .form-row
+                                                    button.button.button_orange(type="submit") Отправить вопрос
+                            .column
+                                .wiki-content__inner
+                                    each val, i in sidebarList
+                                        if (i === 0)
+                                            .wiki-content__inner-tab.active
+                                                .anchors
+                                                    ul.anchors__list
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#1") Выбор категории
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#2") Добавление информации 
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#3") Указание характеристик
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#4") Заполнение свойств
+                                                .information
+                                                    .information__title
+                                                        h2 Создание номенклатуры  
+                                                    .information__content
+                                                        #1.information__content-section
+                                                            h3 Выбор категории
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                            img(src="./images/static/main-banner-bg.png" alt="Content picture")
+                                                            button.button.button_zoom(type="button")
+                                                                img.icon(src="./images/icon-zoom.svg" alt="Zoom icon")
+                                                                span.txt Увеличить 
+                                                        #2.information__content-section
+                                                            h3 Добавление информации
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                        #3.information__content-section
+                                                            h3 Указание характеристик
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                        #4.information__content-section
+                                                            h3 Заполнение свойств
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                .benefits-grid
+                                                    +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                                    +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                                    +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+                                        else
+                                            .wiki-content__inner-tab
+                                                .anchors
+                                                    ul.anchors__list
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#1") Выбор категории
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#2") Добавление информации 
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#3") Указание характеристик
+                                                        li.anchors__item
+                                                            span.anchors__icon
+                                                                svg.icon
+                                                                    use(xlink:href=`./images/svg/sprite/sprite.svg#arrow-bottom`)
+                                                            a.anchors__link(href="#4") Заполнение свойств
+                                                .information
+                                                    .information__title
+                                                        h2 Создание номенклатуры  
+                                                    .information__content
+                                                        #1.information__content-section
+                                                            h3 Выбор категории
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                            img(src="./images/static/main-banner-bg.png" alt="Content picture")
+                                                            button.button.button_zoom(type="button")
+                                                                img.icon(src="./images/icon-zoom.svg" alt="Zoom icon")
+                                                                span.txt Увеличить 
+                                                        #2.information__content-section
+                                                            h3 Добавление информации
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                        #3.information__content-section
+                                                            h3 Указание характеристик
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                        #4.information__content-section
+                                                            h3 Заполнение свойств
+                                                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.Pulvinar habitant convallis feugiat suspendisse pharetra. Consequat faucibus feugiat id vehicula malesuada. Mi pulvinar facilisis mi velit consequat maecenas.
+                                                            p Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet. At morbi feugiat interdum morbi pellentesque nunc. Amet, sit ullamcorper feugiat nulla nibh auctor tellus. Nunc, dolor interdum ultrices egestas adipiscing mauris morbi orci tincidunt. Felis turpis netus sapien, condimentum sagittis pulvinar. Amet tincidunt non at duis ultricies. Netus sit convallis lorem nunc volutpat. Sed sed porta blandit volutpat velit sit eget purus. Amet ut elit augue aliquet commodo laoreet diam ut. Ac vel malesuada egestas pellentesque ac amet.
+                                                .benefits-grid
+                                                    +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                                    +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                                    +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')

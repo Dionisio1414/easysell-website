@@ -1,0 +1,37 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+    
+.benefit
+    .benefit__picture
+        position: relative
+        margin-bottom: rem-calc(32px)
+        max-width: rem-calc(55px)
+        &::before
+            content: ""
+            position: absolute
+            top: 0
+            left: 0
+            background: rgba(set-color(blue-light), .5)
+            border-radius: rem-calc(10px) rem-calc(45px) rem-calc(10px) rem-calc(10px)
+            width: rem-calc(73px)
+            height: rem-calc(69px)
+        .picture
+            position: relative
+            width: 100%
+            margin-left: rem-calc(20px)
+    .benefit__title
+        font-family: $HelveticaMedium
+        font-size: rem-calc(18px)
+        line-height: 1
+        margin-bottom: rem-calc(23px)
+        color: set-color(dark-blue)
+        +lg-block()
+            margin-bottom: rem-calc(15px)
+    .benefit__description
+        font-family: $HelveticaLight
+        line-height: rem-calc(22px)
+        color: set-color(grays)
+    .benefit__buttons
+        margin-top: rem-calc(34px)
+        +lg-block()
+            margin-top: rem-calc(20px)

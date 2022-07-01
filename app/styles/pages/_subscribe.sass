@@ -1,0 +1,123 @@
+.subscribePage
+  &::before
+    +md-block()
+      display: none
+
+  &__title
+    font-size: 24px
+    font-weight: 550
+    line-height: 39px
+    //padding: 0 16px
+    margin-bottom: 16px
+    +md-block()
+      padding: 0
+      font-size: 18px
+      line-height: 24px
+      margin-bottom: 16px
+  
+  &__subtitle
+    border-top: 1px solid #74aae6
+    padding-top: 16px
+    margin-top: 16px
+    font-size: 16px
+  
+  &__timer
+    display: flex
+    justify-content: center
+    align-items: flex-start
+  
+  &__col
+    min-width: 75px
+    +md-block()
+      min-width: 55px
+    &:not(:last-child)
+      margin-right: 50px
+      +md-block()
+        margin-right: 16px
+  
+  &__value
+    display: block
+    font-size: 50px
+    font-weight: 550
+    line-height: 50px
+    margin-bottom: 10px
+    +md-block()
+      font-size: 24px
+      line-height: 30px
+      
+  
+  &__label
+    display: block
+    font-size: 18px
+    font-weight: 300
+    line-height: 23px
+    +md-block()
+      font-size: 14px
+    
+  &__form
+    //padding: 40px 0 0 0
+    margin-top: 24px
+    //border-top: 1px solid #74AAE6
+    transition: all .2s
+    &--loading
+      opacity: .3
+    input
+      width: 100%
+      border-radius: 10px
+      background: #F4F9FF
+      border: 1px solid #E3F0FF
+      padding: 15px 20px
+      margin-bottom: 30px
+      &::-webkit-input-placeholder 
+        color:#5893D4
+      &::-moz-placeholder          
+        color:#5893D4
+      &:-moz-placeholder           
+        color:#5893D4
+      &:-ms-input-placeholder      
+        color:#5893D4
+      
+  &__errors
+    p
+      font-size: 13px
+      margin: 8px 0
+
+  &__row
+    position: relative
+    &::after
+      content: ''
+      position: absolute
+      width: 16px
+      height: 16px
+      top: 18px
+      right: 30px
+      opacity: 0
+      transition: all .2s
+    &--error
+      &::after
+        opacity: 1
+        background-image: url('/images/ic-error.svg')
+        background-repeat: no-repeat
+    &--success
+      &::after
+        opacity: 1
+        background-image: url('/images/ic-check.svg')
+        background-repeat: no-repeat
+  
+  .nf__win
+    padding: 40px 84px 0 84px
+    min-height: 800px
+    +md-block()
+      padding: 32px 32px 0 32px
+      margin-bottom: 32px
+      min-height: 1px
+
+  .nf__rec
+    height: 175px
+    background-size: cover
+    background-position: top
+  
+  .nf__rec2
+    height: 100px
+    background-size: cover
+    background-position: top

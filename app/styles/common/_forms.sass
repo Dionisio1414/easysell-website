@@ -1,0 +1,197 @@
+@import ../functions/rem-calc
+@import ../functions/set-color
+@import ../mixins/short-transition
+
+.js-Dropdown
+    width: 100%
+    .js-Dropdown
+        &-title
+            font-size: 1rem
+            background: transparent
+            border: none
+            border-bottom: 1px solid set-color(light-gray)
+            padding: 0 rem-calc(18px) rem-calc(15px) 0
+            height: auto
+            color: #fff
+            &::after
+                background-image: url(../images/svg/contacts-arrow.svg)
+                background-repeat: no-repeat
+                background-size: contain
+                background-position: center
+                right: 0
+                top: calc(50% - 6px)
+                transform: translateY(-50%)
+                border: none
+                width: 18px
+                height: 18px
+        &-list
+            border: none
+            border-radius: 0 0 rem-calc(10px) rem-calc(10px)
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1)
+            overflow: hidden
+            li
+                font-family: $HelveticaMedium
+                font-size: rem-calc(15px)
+                line-height: 1
+                border: none
+                padding: rem-calc(8px) rem-calc(20px)
+                color: set-color(accent)
+                +short-transition()
+                &.is-selected,
+                &:hover
+                    background: set-color(alice-blue)
+.search
+    &__field
+        position: relative
+        input
+            display: block
+            background-color: #fff
+            background-image: url(../images/svg/search.svg)
+            background-repeat: no-repeat
+            background-position: calc(100% - 15px) center
+            background-size: 23px 23px
+            border-radius: rem-calc(100px)
+            border: 1px solid set-color(lighten-grays)
+            padding: rem-calc(10px) rem-calc(45px) rem-calc(10px) rem-calc(15px)
+            width: 100%
+            outline: none
+            +short-transition()
+            &::-webkit-search-decoration,
+            &::-webkit-search-cancel-button,
+            &::-webkit-search-results-button,
+            &::-webkit-search-results-decoration,
+                display: none
+                -webkit-appearance: none
+            &::placeholder
+                font-size: rem-calc(13px)
+                color: set-color(accent-light)
+                +short-transition()
+            &:focus
+                border-color: set-color(accent-light)
+            &:read-only
+                &:focus
+                    border-color: transparent
+            &.filled
+                + .clear
+                    z-index: 1
+                    opacity: 1
+        .clear
+            position: absolute
+            top: 50%
+            right: rem-calc(15px)
+            transform: translateY(-50%)
+            background-color: #fff
+            background-image: url(../images/svg/close.svg)
+            background-repeat: no-repeat
+            background-position: center
+            background-size: cover
+            width: rem-calc(24px)
+            height: rem-calc(24px)
+            z-index: -1
+            opacity: 0
+            +short-transition()
+
+.form
+    label
+        display: block
+        font-family: $HelveticaLight
+        line-height: 1
+        margin-bottom: rem-calc(10px)
+        color: #fff
+    input
+        font-family: $HelveticaLight
+        background: transparent
+        border: none
+        border-bottom: 1px solid set-color(accent)
+        width: 100%
+        padding-bottom: rem-calc(15px)
+        outline: none
+        color: #fff
+        &::placeholder
+            color: set-color(accent-light)
+        &:focus
+            border-color: set-color(accent-light)
+            outline: none
+            &::placeholder
+                color: #fff
+    textarea
+        font-family: $HelveticaLight
+        background: transparent
+        border: 1px solid set-color(accent-light)
+        border-radius: rem-calc(10px)
+        padding: rem-calc(15px)
+        width: 100%
+        outline: none
+        resize: none
+        color: #fff
+        &::placeholder
+            color: set-color(accent-light)
+        &:focus
+            border-color: set-color(accent-light)
+            outline: none
+            &::placeholder
+                color: #fff
+
+input
+    &[type="range"],
+    &.range
+        -webkit-appearance: none
+        width: 100%
+        &:disabled
+            background: transparent
+            &::-webkit-slider-thumb
+                background: set-color(lighten-gray)
+            &::-moz-range-thumb
+                background: set-color(lighten-gray)
+        &:focus
+            outline: none
+        &::-webkit-slider-thumb
+            -webkit-appearance: none
+            background: set-color(orange)
+            width: rem-calc(230px)
+            height: rem-calc(3px)
+            margin-top: -2px
+            cursor: pointer
+            +md-block()
+                width: rem-calc(90px)
+        &::-webkit-slider-runnable-track
+            background: set-color(accent-light)
+            width: 100%
+            height: 1px
+            padding: 0 rem-calc(40px)
+            cursor: pointer
+        &::-moz-range-thumb
+            background: set-color(orange)
+            width: rem-calc(230px)
+            height: rem-calc(3px)
+            border: none
+            margin-top: -5px
+            cursor: pointer
+            +md-block()
+                width: rem-calc(90px)
+        &::-moz-range-track
+            background: set-color(accent-light)
+            width: 100%
+            height: 1px
+            padding: 0 rem-calc(40px)
+            cursor: pointer
+        &::-ms-track
+            background: set-color(orange)
+            width: 230px
+            height: 3px
+            border: none
+            width: 100%
+            color: transparent
+            cursor: pointer
+            +md-block()
+                width: 90px
+
+.feedback__form
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active
+        transition: background-color 5000s ease-in-out 0s
+        -webkit-text-fill-color: #fff
+        color: #fff
+

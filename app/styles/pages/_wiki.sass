@@ -1,0 +1,558 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+@import ../functions/pxToPercentage
+@import ../mixins/short-transition
+
+.content
+    .main
+        &--wiki
+            overflow-x: visible
+
+            .sidebar
+                margin-bottom: 30px
+    
+.wiki
+    position: relative
+    margin-bottom: rem-calc(100px)
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    //overflow: hidden
+    &.scrolled
+        height: auto
+        min-height: auto
+        + .wiki-content
+            //padding-top: 195px
+            +lg-block()
+                //padding-top: 761px
+    &.completed
+        + .wiki-content
+            padding-top: 195px
+    +xl-block()
+        height: calc(100vh - 120px)
+        min-height: calc(100vh - 120px)
+    +lg-block()
+        height: calc(100vh - 95px)
+        min-height: calc(100vh - 95px)
+        margin: 0
+        height: auto
+        min-height: 1px
+    > .container
+        +lg-block()
+            display: none
+    .container
+        +wrapper()
+        .row
+            +row-flex()
+    &-controls
+        +col()
+        +size(12)
+    &-slider
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0 -35% em-calc(40px) -35%
+        padding-top: rem-calc(60px)
+        transform: scale(.5)
+        opacity: 0
+        transition: 1s ease-in-out
+        &--loaded
+            transform: scale(1)
+            opacity: 1
+        +short-transition()
+        +md_desktop-block()
+            padding-top: rem-calc(50px)
+        +lg-block()
+            display: none
+        &__item
+            border: em-calc(10px) solid #fff
+            border-radius: em-calc(30px)
+            box-shadow: $boxshadow
+            flex: 0 1 calc(33.333% - 70px)
+            height: 100%
+            max-height: em-calc(486px)
+            overflow: hidden
+            .picture
+                width: 100%
+    &-banner
+        position: absolute
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        z-index: 11
+        +long-transition()
+        +lg-block()
+            //height: 100vh
+            position: static
+        &--sticky
+            position: fixed!important
+            // bottom: calc(100% - 310px)
+            //bottom: calc(100% - 290px)
+            //bottom: 100%
+            //transform: translateY(100%)
+            bottom: unset
+            top: 0
+            height: auto!important
+            z-index: 12
+            .wiki-banner__top
+                //height: rem-calc(232px)
+                height: auto
+                .banner-arrow
+                    display: none
+                .wiki-tabs
+                    +lg-block()
+                        padding-top: 8px
+                    .tabs
+                        +xl-block()
+                            top: rem-calc(15px)
+                        +lg-block()
+                            //top: rem-calc(3px)
+                            top: rem-calc(40px)
+                .wiki-content
+                    // padding-top: rem-calc(155px)
+                    // padding-top: rem-calc(180px)
+                    +xl-block()
+                        padding-top: rem-calc(140px)
+                    +lg-block()
+                        padding-top: 0
+                    .buttons
+                        opacity: 1
+                    .caption,
+                    .description
+                        display: none
+                    .pictures
+                        display: none
+            .wiki-banner__bottom
+                border-color: set-color(light-gray)
+                +xl-block()
+                    height: rem-calc(128px)
+                    padding-top: rem-calc(65px)
+                +lg-block()
+                    height: rem-calc(78px)
+                    padding-top: 0
+                .container
+                    .row
+                        .search
+                            opacity: 1
+        &--completed
+            opacity: 0
+        &__top
+            position: relative
+            border-bottom: 1px solid set-color(light-gray)
+            height: rem-calc(434px)
+            +xl-block()
+                height: rem-calc(350px)
+            +lg-block()
+                // height: calc(100% - 55px)
+                // padding-top: rem-calc(95px)
+                height: auto
+                padding-top: 0
+            &::before
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                right: 0
+                bottom: 0
+                width: 100%
+                height: 100%
+                background: rgba(set-color(light-blue), .7)
+                backdrop-filter: blur(8px)
+                z-index: 1
+            .container
+                +wrapper()
+                height: 100%
+                .row
+                    +row-flex()
+                    height: 100%
+            .banner-arrow
+                position: absolute
+                top: rem-calc(63px)
+                right: 15%
+                z-index: 1
+                animation: 1s ease-out infinite alternate moveArrowWiki
+                +lg-block()
+                    top: 50%
+                    right: rem-calc(15px)
+                    transform: translateY(-50%)
+                    animation: none
+                    max-width: rem-calc(55px)
+            .wiki
+                &-content
+                    +col()
+                    +size(5)
+                    +size-small_desktop(5)
+                    +size-xl(8)
+                    +size-lg(12)
+                    position: relative
+                    padding-top: rem-calc(54px)
+                    margin-bottom: 0
+                    z-index: 1
+                    +lg-block()
+                        padding-top: rem-calc(24px)
+                    .buttons
+                        opacity: 0
+                        transition-delay: 1.5s
+                        +short-transition()
+                        +lg-block()
+                            display: block
+                            //margin-bottom: rem-calc(30px)
+                    .caption
+                        margin-bottom: rem-calc(25px)
+                        +lg-block()
+                            margin-bottom: rem-calc(15px)
+                        h1
+                            font-family: $HelveticaBold
+                            font-size: rem-calc(50px)
+                            line-height: rem-calc(55px)
+                            +md_desktop-block()
+                                font-size: rem-calc(42px)
+                                line-height: rem-calc(47px)
+                            +small_desktop-block()
+                                font-size: rem-calc(36px)
+                                line-height: rem-calc(38px)
+                            +lg-block()
+                                font-size: rem-calc(32px)
+                                line-height: rem-calc(35px)
+                    .description
+                        font-size: rem-calc(32px)
+                        color: set-color(text-color)
+                        +md_desktop-block()
+                            font-size: rem-calc(28px)
+                        +small_desktop-block()
+                            font-size: rem-calc(24px)
+                        +lg-block()
+                            margin-bottom: rem-calc(40px)
+                        p
+                            line-height: rem-calc(42px)
+                            margin: 0
+                            +md_desktop-block()
+                                line-height: rem-calc(33px)
+                            +small_desktop-block()
+                                line-height: rem-calc(27px)
+                    .pictures
+                        display: none
+                        position: relative
+                        //height: 100%
+                        +lg-block()
+                            display: block
+                            min-height: 210px
+                        &__item
+                            position: absolute
+                            border: em-calc(5px) solid #fff
+                            border-radius: em-calc(10px)
+                            box-shadow: $boxshadow
+                            width: 100%
+                            height: 100%
+                            overflow: hidden
+                            +lg-block()
+                                width: rem-calc(338px)
+                                height: rem-calc(180px)
+                            &:first-child
+                                top: 0
+                                left: rem-calc(-140px)
+                                max-height: rem-calc(222px)
+                                max-width: rem-calc(415px)
+                            &:last-child
+                                top: rem-calc(80px)
+                                left: rem-calc(-50px)
+                                max-height: em-calc(180px)
+                                max-width: rem-calc(338px)
+                            .picture
+                                width: 100%
+                                height: 100%
+                &-tabs
+                    +col()
+                    +size(7)
+                    +size-small_desktop(7)
+                    +size-xl(12)
+                    align-self: flex-end
+                    +lg-block()
+                        padding-top: 70px
+                    .tabs
+                        position: relative
+                        top: rem-calc(50px)
+                        z-index: 1
+                        overflow: visible
+                        +xl-block()
+                            top: rem-calc(40px)
+                        &__list
+                            position: relative
+                            display: flex
+                            justify-content: space-between
+                            padding: 0
+                            margin: 0
+                            list-style-type: none
+                            height: 100%
+                            min-height: rem-calc(109px)
+                            max-height: rem-calc(109px)
+                            &-item
+                                font-size: 0
+                                text-align: center
+                                //flex: 0 1 calc(100% / 8)
+                                cursor: pointer
+                                opacity: 0
+                                transition: opacity .2s
+                                +xl-block()
+                                    opacity: 1
+                                &.swiper-slide-visible
+                                    opacity: 1
+                                .icon-wrap
+                                    position: relative
+                                    padding-bottom: rem-calc(30px) 
+                                    margin-bottom: rem-calc(25px)
+                                    +xl-block()
+                                        padding-bottom: rem-calc(20px)
+                                        margin-bottom: rem-calc(20px)
+                                    &::before
+                                        content: ""
+                                        background: set-color(accent-light)
+                                        position: absolute
+                                        bottom: 0
+                                        left: 50%
+                                        width: rem-calc(38px)
+                                        height: 3px
+                                        transform: translateX(-50%)
+                                        opacity: 0
+                                        +short-transition()
+                                    .icon
+                                        display: inline-block
+                                        font-size: 1rem
+                                        fill: set-color(accent-light)
+                                        max-width: em-calc(25px)
+                                        max-height: em-calc(30px)
+                                        +short-transition()
+                                .text
+                                    display: block
+                                    font-family: $HelveticaLight
+                                    font-size: 1rem
+                                    word-break: normal
+                                    overflow-wrap: normal
+                                    color: set-color(accent-light)
+                                    +short-transition()
+                                    +lg-block()
+                                        font-size: rem-calc(15px)
+                                        white-space: nowrap
+                                        overflow: hidden
+                                        text-overflow: ellipsis
+                                &:hover,
+                                &.active
+                                    .icon-wrap
+                                        &::before
+                                            opacity: 1
+                                        .icon
+                                            fill: set-color(orange)
+                                    .text
+                                        color: set-color(orange)
+                        .tns-nav
+                            +md-block()
+                                display: none
+        &__bottom
+            background: #fff
+            border-bottom: 1px solid transparent
+            padding-top: rem-calc(15px)
+            height: rem-calc(85px)
+            +short-transition()
+            +xl-block()
+                height: rem-calc(70px)
+            .container
+                +wrapper()
+                .row
+                    +row-flex()
+                    .search
+                        opacity: 0
+                        +col()
+                        +size(3.33)
+                        +size-xl(12)
+                        transition-delay: .25s
+                        +short-transition()
+                        +lg-block()
+                            display: none
+
+    &-content
+        margin-bottom: rem-calc(200px)
+        transition: all .5s
+        +lg-block()
+            margin-bottom: rem-calc(100px)
+        +md-block()
+            margin-bottom: rem-calc(70px)
+            margin-top: rem-calc(32px)
+        &__outer
+            &-tab
+                display: none
+                &.active
+                    display: block
+                > span
+                    display: none
+            .container
+                +wrapper()
+                .row
+                    +row-flex()
+                    .column
+                        position: relative
+                        &:first-child
+                            +col()
+                            +size(3)
+                            +size-sm_desktop(4)
+                            +size-xl(5)
+                            +shift-right(1)
+                            +shift-small_desktop-right(0)
+                            +lg-block()
+                                display: none
+                        &:last-child
+                            +col()
+                            +size(8)
+                            +size-small_desktop(9)
+                            +size-sm_desktop(8)
+                            +size-xl(7)
+                            +size-lg(12)
+            .sticky-wrapper
+                // position: relative
+                // height: 100%
+                position: sticky
+                top: calc(195px + 30px)
+                height: auto
+                &__item
+                    &:not(:last-child)
+                        margin-bottom: rem-calc(30px)
+            .question-form
+                position: relative
+                background: set-color(dark-blue)
+                border-radius: 0 rem-calc(20px) rem-calc(70px) 0
+                padding: rem-calc(40px) rem-calc(35px) rem-calc(40px) 0
+                &::before
+                    content: ""
+                    position: absolute
+                    right: 100%
+                    top: 0
+                    bottom: 0
+                    background: set-color(dark-blue)
+                    height: 100%
+                    width: 50vw
+                &__header
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    .caption
+                        font-family: $HelveticaBold
+                        font-size: rem-calc(22px)
+                        line-height: rem-calc(29px)
+                        color: #fff
+                    .toggle-form-button
+                        border: none
+                        padding: 0
+                        transform-origin: center
+                        +short-transition()
+                        &.active
+                            transform: rotate(180deg)
+                        .icon
+                            fill: set-color(blue-light)
+                            max-width: rem-calc(25px)
+                            max-height: rem-calc(28px)
+                &__body
+                    display: none
+                    margin-top: rem-calc(30px)
+                    &.active
+                        display: block
+                    .form
+                        &-row
+                            &:not(:last-child)
+                                margin-bottom: rem-calc(30px)
+                            .button
+                                width: 100%
+        &__inner
+            &-tab
+                display: none
+                &.active
+                    display: block
+            .anchors
+                position: relative
+                padding-left: rem-calc(20px)
+                margin-bottom: rem-calc(55px)
+                &::before
+                    content: ""
+                    background: set-color(light-gray)
+                    position: absolute
+                    left: 0
+                    top: 0
+                    height: 100%
+                    width: 1px
+                &__list
+                    padding: 0
+                    margin: 0
+                    list-style: none
+                &__item
+                    display: flex
+                    align-items: center
+                    &:not(:last-child)
+                        margin-bottom: rem-calc(20px)
+                    &.active,
+                    &:hover
+                        .anchors__icon
+                            opacity: 1
+                        .anchors__link
+                            text-decoration: underline
+                &__icon
+                    margin-right: rem-calc(10px)
+                    opacity: 0
+                    +short-transition()
+                    .icon
+                        fill: set-color(blue-light)
+                        max-width: rem-calc(18px)
+                        max-height: rem-calc(10px)
+                &__link
+                    font-family: $HelveticaBold
+                    line-height: 1
+                    color: set-color(accent)
+                    +short-transition()
+            .information
+                &__title
+                    font-size: rem-calc(32px)
+                    line-height: 1
+                    margin-bottom: rem-calc(28px)
+                    color: set-color(text-color)
+                    +lg-block()
+                        font-size: rem-calc(28px)
+                    +mobile_s-block()
+                        font-size: rem-calc(24px)
+                    h2
+                        font-family: $HelveticaBold
+                &__content
+                    h3
+                        font-family: $HelveticaBold
+                        font-size: rem-calc(22px)
+                        margin-bottom: rem-calc(20px)
+                        +lg-block()
+                            font-size: rem-calc(20px)
+                        +mobile_s-block()
+                            font-size: rem-calc(18px)
+                    p
+                        font-family: $HelveticaLight
+                        line-height: rem-calc(22px)
+                        margin-bottom: rem-calc(20px)
+                        color: set-color(grays)
+                        +lg-block()
+                            font-size: rem-calc(15px)
+                            margin-bottom: rem-calc(10px)
+                    img:not(.icon)
+                        border-radius: rem-calc(10px)
+                        box-shadow: 0 0 20px rgba(0,0,0,.3)
+                        width: 100%
+                        margin-bottom: rem-calc(20px)
+                    .button_zoom
+                        display: none
+                        margin: 0 auto rem-calc(22px) auto
+                        +lg-block()
+                            display: flex
+            .benefits-grid
+                display: flex
+                justify-content: space-between
+                flex-wrap: wrap
+                .benefit
+                    flex: 0 1 calc(33.333% - 15px)
+                    &__title
+                        color: set-color(accent-light)
+                    +md-block()
+                        flex: 0 1 100%
+                        &:not(:last-child)
+                            margin-bottom: rem-calc(25px)

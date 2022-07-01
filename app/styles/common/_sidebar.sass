@@ -1,0 +1,153 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+@import ../mixins/short-transition
+
+.sidebar
+    background: set-color(light-gray)
+    border-radius: rem-calc(20px)
+    z-index: 5
+    +lg-block()
+        border-radius: rem-calc(10px)
+    &-wrapper
+        position: relative
+        &__top
+            position: relative
+            background: set-color(light-gray)
+            border-radius: rem-calc(10px)
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: rem-calc(15px) rem-calc(100px) rem-calc(15px) rem-calc(20px)
+            &.active
+                border-bottom: 1px solid #fff
+                border-bottom-left-radius: 0
+                border-bottom-right-radius: 0
+                + .sidebar
+                    display: block
+            .link
+                font-family: $HelveticaBold
+                line-height: 1
+                text-decoration: none
+                color: set-color(text-color)
+                +short-transition()
+            .arrow
+                padding: 0
+                border: none
+                line-height: 1
+                max-height: rem-calc(15px) 
+                &.active
+                    transform: rotate(180deg)
+                .icon
+                    fill: set-color(accent-light)
+                    max-width: rem-calc(18px)
+                    max-height: rem-calc(15px) 
+            .search
+                position: absolute
+                top: 50%
+                right: 15px
+                transform: translateY(-50%)
+                width: rem-calc(55px)
+                z-index: 3
+                +short-transition()
+                &.shown
+                    width: calc(100% - 30px)
+                    input
+                        width: 100%
+                        padding-right: rem-calc(45px)
+                        cursor: auto
+                        &::placeholder
+                            opacity: 1
+                &__field
+                    input
+                        margin-left: auto
+                        padding-right: rem-calc(15px)
+                        cursor: pointer
+                        &::placeholder
+                            opacity: 0
+                        &:focus
+                            border-color: transparent
+        .sidebar
+            display: none
+            position: absolute
+            width: 100%
+            border-radius: 0 0 rem-calc(20px) rem-calc(20px)
+    &__navigation
+        .navlist
+            padding: 0
+            margin: 0
+            list-style-type: none
+            &__item
+                position: relative
+                display: flex
+                align-items: center
+                justify-content: space-between
+                padding: rem-calc(15px) rem-calc(20px)
+                &-articles
+                    padding-right: rem-calc(100px)
+                    .navlist__link 
+                        text-decoration: underline
+                        color: set-color(text-color)
+                &:not(:last-child)
+                    border-bottom: 1px solid #fff
+                &:hover, 
+                &.active
+                   .navlist__link 
+                       font-family: $HelveticaBold
+                       color: set-color(darken-blue)
+                       &-icon
+                           transform: translateX(0)
+                           opacity: 1
+            &__arrow
+                padding: 0
+                border: none
+                line-height: 1
+                max-height: rem-calc(15px) 
+                .icon
+                    fill: set-color(accent-light)
+                    max-width: rem-calc(18px)
+                    max-height: rem-calc(15px) 
+            &__link
+                display: flex
+                align-items: center
+                justify-content: space-between
+                font-family: $HelveticaMedium
+                line-height: 1
+                text-decoration: none
+                color: set-color(text-color)
+                +short-transition()
+                &-icon
+                    position: absolute
+                    right: rem-calc(15px)
+                    transform: translateX(rem-calc(15px))
+                    opacity: 0
+                    +short-transition()
+                    .icon
+                        height: rem-calc(30px)
+                        width: rem-calc(30px)
+            .search
+                position: absolute
+                top: 50%
+                right: 15px
+                transform: translateY(-50%)
+                width: rem-calc(55px)
+                z-index: 3
+                +short-transition()
+                &.shown
+                    width: calc(100% - 30px)
+                    input
+                        width: 100%
+                        padding-right: rem-calc(45px)
+                        cursor: auto
+                        &::placeholder
+                            opacity: 1
+                &__field
+                    input
+                        margin-left: auto
+                        padding-right: rem-calc(15px)
+                        cursor: pointer
+                        &::placeholder
+                            opacity: 0
+                        &:focus
+                            border-color: transparent
+                
+

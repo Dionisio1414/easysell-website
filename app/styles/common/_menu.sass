@@ -1,0 +1,141 @@
+@import ../functions/pxToPercentage
+@import ../functions/set-color
+@import ../functions/em-calc
+@import ../mixins/long-transition
+
+.menu
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    display: flex
+    justify-content: center
+    flex-direction: column
+    background-color: set-color(light-blue)
+    padding: em-calc(41px) em-calc(50px) em-calc(70px) em-calc(50px) 
+    min-height: 100vh
+    height: 100vh
+    width: +pxToPercentage(835, 1920)
+    transform: translateX(100%)
+    +long-transition()
+    +small_desktop-block()
+        width: +pxToPercentage(1000, 1920)
+    +sm_desktop-block()
+        width: +pxToPercentage(1100, 1920)
+    +xl-block()
+        width: +pxToPercentage(1300, 1920)
+    +lg-block()
+        width: 100%
+        padding: em-calc(104px) em-calc(30px) em-calc(70px) em-calc(30px) 
+    +sm-block()
+        padding: em-calc(104px) em-calc(15px) em-calc(70px) em-calc(15px) 
+    &--open
+        transform: translateX(0%)
+    &__buttons
+        display: none
+        position: absolute
+        top: rem-calc(42px)
+        left: rem-calc(15px)
+        +lg-block()
+            display: block
+        +sm-block()
+            top: rem-calc(36px)
+            //left: 0
+            .button
+                font-size: rem-calc(15px)
+                &_accent
+                    padding: rem-calc(13px) rem-calc(35px)
+                &_simple
+                    padding: rem-calc(15px) rem-calc(15px)
+    &__wrapper
+        overflow-y: auto
+        flex: 1
+        margin: auto 0
+        height: calc( 100% - 2em )
+        &::-webkit-scrollbar
+            width: 5px
+        &::-webkit-scrollbar-track
+            background-color: #fff
+        &::-webkit-scrollbar-thumb
+            background-color: set-color(medium-blue)
+            border-radius: 20px
+        .nav
+            margin: 0
+            width: 100%
+            max-width: +pxToPercentage(600, 835)
+            +sm_desktop-block()
+                max-width: 100%
+            .navlist
+                padding: 0
+                margin: 0
+                list-style-type: none
+                &__item
+                    &:not(:last-child)
+                        margin-bottom: em-calc(27px)
+                        +sm-block()
+                            margin-bottom: em-calc(15px)
+                &__link
+                    position: relative
+                    display: inline-block
+                    font-family: $HelveticaLight
+                    font-size: em-calc(26px)
+                    padding-bottom: em-calc(5px)
+                    padding-left: em-calc(100px)
+                    color: set-color(medium-blue)
+                    +long-transition()
+                    +sm-block()
+                        font-size: rem-calc(18px)
+                    &::before
+                        content: ""
+                        position: absolute
+                        left: 0
+                        bottom: 0
+                        background: rgba(set-color(accent-light), .3)
+                        width: em-calc(85px)
+                        height: 2px
+                        +long-transition()
+                    &:hover,
+                    &--active
+                        font-family: $HelveticaMedium
+                        &::before
+                            width: calc(100% + 25px)
+    &__background
+        background-image: url(../images/particles-bg.svg)
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center
+        width: 100%
+        height: em-calc(164px)
+        max-width: +pxToPercentage(600, 835)
+        +sm-block()
+            height: rem-calc(86px)
+            max-width: 100%
+
+    //
+    &__langs
+        // position: absolute
+        // top: rem-calc(50px)
+        // right: rem-calc(290px)
+        display: flex
+        justify-content: center
+        margin-bottom: rem-calc(104px)
+        opacity: 0
+        transition: all .2s
+        +lg-block()
+            justify-content: flex-start
+            margin-bottom: rem-calc(32px)
+        .button
+            border-color: #9DCCFF
+            color: #9DCCFF
+            padding: 14px 20px
+            line-height: 16px
+            &--active, &:hover
+                background: #9DCCFF
+                color: #fff
+            &:not(:last-child)
+                margin-right: 15px
+    
+    &--open
+        .menu__langs
+            opacity: 1
+            transition-delay: .5s

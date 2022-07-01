@@ -1,0 +1,341 @@
+@import ../functions/pxToPercentage
+@import ../functions/rem-calc
+@import ../functions/set-color
+@import ../mixins/title
+@import ../mixins/short-transition
+@import ../mixins/long-transition
+
+.features
+    margin-bottom: rem-calc(110px)
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    +xl-block()
+        height: auto
+        min-height: auto
+        margin-bottom: rem-calc(45px)
+        overflow: hidden
+    .container
+        +wrapper()
+        height: 100%
+        .row
+            +row-flex()
+            height: 100%
+            .column
+                +col()
+                &:first-child
+                    +size(5.22)
+                    +size-xl(12)
+                    +xl-block()
+                        margin: 0
+                        width: 100%
+                &:last-child
+                    position: relative
+                    display: flex
+                    align-items: center
+                    +size(6.78)
+                    +size-xl(12)
+                    +xl-block()
+                        display: none
+                .banner
+                    &__info
+                        .pictures
+                            position: relative
+                            height: em-calc(300px)
+                            +md-block()
+                                height: em-calc(265px)
+                            .picture
+                                width: 100%
+                                height: 100%
+                            &__item
+                                position: absolute
+                                border: em-calc(5px) solid #fff
+                                border-radius: em-calc(10px)
+                                box-shadow: $boxshadow
+                                width: 100%
+                                height: 100%
+                                overflow: hidden
+                                &:first-child
+                                    top: 0
+                                    left: rem-calc(-140px)
+                                    max-height: rem-calc(290px)
+                                    max-width: rem-calc(490px)
+                                    +md-block()
+                                        left: rem-calc(-175px)
+                                        max-width: rem-calc(415px)
+                                        max-height: rem-calc(222px)
+                                    +mobile_s-block()
+                                        left: rem-calc(-100px)
+                                &:last-child
+                                    top: rem-calc(80px)
+                                    left: rem-calc(-50px)
+                                    max-height: em-calc(230px)
+                                    max-width: rem-calc(450px)
+                                    +md-block()
+                                        max-width: rem-calc(338px)
+                                        max-height: rem-calc(180px)
+    &__pictures
+        position: relative
+        height: 100%
+        width: 100%
+        max-height: em-calc(725px)
+        &-item
+            position: absolute
+            border: em-calc(10px) solid #fff
+            border-radius: em-calc(30px)
+            box-shadow: $boxshadow
+            width: 100%
+            overflow: hidden
+            .picture
+                width: 100%
+                height: 100%
+            &:first-child
+                top: em-calc(50px)
+                right: em-calc(100px)
+                width: em-calc(1080px)
+                height: 100%
+                max-height: em-calc(575px)
+                max-width: em-calc(1080px)
+                +md_desktop-block()
+                    width: 100%
+                    max-height: em-calc(490px)
+            &:last-child
+                right: 0
+                bottom: 0
+                width: 100%
+                height: 100%
+                max-height: em-calc(468px)
+                max-width: em-calc(880px)
+                +md_desktop-block()
+                    bottom: em-calc(25px)
+                    max-height: em-calc(400px)
+
+.benefits
+    // margin-bottom: rem-calc(460px)
+    margin-bottom: rem-calc(210px)
+    +xl-block()
+        margin-bottom: rem-calc(70px)
+    .container
+        +wrapper()
+        .row
+            +row-flex()
+    &__content
+        background: set-color(blue-light)
+        border-radius: em-calc(110px) em-calc(20px) 0 em-calc(20px)
+        padding: em-calc(90px) em-calc(115px) em-calc(96px) em-calc(115px)
+        +col()
+        +size(7.5)
+        +size-small_desktop(6.5)
+        +size-lg(12)
+        +xl-block()
+            padding: rem-calc(45px) rem-calc(115px) rem-calc(45px) rem-calc(35px)
+        +lg-block()
+            padding: rem-calc(25px) rem-calc(35px) rem-calc(25px) rem-calc(35px)
+            order: 2
+        &-buttons
+            .button
+                +sm-block()
+                    display: block
+                    width: 100%
+            +lg-block()
+                text-align: center
+        &-tabs
+            margin-bottom: rem-calc(40px)
+            .tablist
+                position: relative    
+                margin: 0
+                padding: 0
+                list-style-type: none
+                max-width: rem-calc(375px)
+                +lg-block()
+                    max-width: 100%
+                &__item
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                    padding: rem-calc(17px) 0 rem-calc(15px) rem-calc(15px) 
+                    width: calc(100% - 80px)
+                    +lg-block()
+                        flex-wrap: wrap
+                        width: 100%
+                    &:not(:last-child)
+                        border-bottom: 1px solid set-color(link-color)
+                    &.active
+                        .icon
+                            +lg-block()
+                                transform: rotate(90deg)
+                        .benefits-information
+                            display: block
+                    .icon
+                        display: block
+                        margin-right: rem-calc(-55px)
+                        padding-left: rem-calc(15px)
+                        max-width: rem-calc(50px)
+                        max-height: rem-calc(20px)
+                        opacity: 0
+                        fill: set-color(dark-blue)
+                        cursor: pointer
+                        +short-transition()
+                        +lg-block()
+                            opacity: 1
+                            fill: set-color(accent-light)
+                            transform: rotate(-90deg)
+                            flex: 0 1 calc(10% - 15px)
+                        use
+                            &:first-child
+                                +lg-block()
+                                    display: none
+                            &:last-child
+                                display: none
+                                +lg-block()
+                                    display: block
+                        +lg-block()
+                            margin: 0
+                            padding: 0
+                            max-width: rem-calc(15px)
+                            max-height: rem-calc(18px)
+                    .benefits-information
+                        display: none
+                        background: #fff
+                        position: absolute
+                        top: rem-calc(15px)
+                        left: 100%
+                        border-radius: rem-calc(10px)
+                        box-shadow: $boxshadow
+                        padding: rem-calc(41px) rem-calc(115px) rem-calc(23px) rem-calc(115px)
+                        width: rem-calc(1060px)
+                        z-index: 2
+                        max-height: 100%
+                        overflow: auto
+                        @media screen and (max-width: 1570px)
+                            width: 63vw
+                        +small_desktop-block()
+                            width: 62vw
+                        +sm_desktop-block()
+                            padding: rem-calc(35px) rem-calc(50px) rem-calc(25px) rem-calc(50px)
+                            width: 57vw
+                        +lg-block()
+                            position: static
+                            flex: 0 1 auto
+                            margin-top: rem-calc(20px)
+                            margin-bottom: rem-calc(20px)
+                            margin-right: rem-calc(-75px)
+                            width: auto
+                        +mobile_s-block()
+                            margin-right: 0
+                            padding-left: 20px
+                        &__header
+                            margin-bottom: rem-calc(55px)
+                            +xl-block()
+                                margin-bottom: rem-calc(35px)
+                            +lg-block()
+                                display: none
+                            .caption
+                                font-family: $HelveticaBold
+                                font-size: rem-calc(32px)
+                                line-height: 1
+                                margin-bottom: rem-calc(13px)
+                                color: set-color(dark-blue)
+                            .description 
+                                font-family: $HelveticaLight
+                                line-height: rem-calc(22px)
+                                margin-bottom: rem-calc(25px)
+                                color: set-color(grays)
+                            .buttons
+                                .button
+                                    font-family: $HelveticaBold
+                        &__body
+                            display: flex
+                            justify-content: space-between
+                            flex-wrap: wrap
+                            +lg-block()
+                                display: block
+                            .benefit
+                                flex: 0 1 calc(33.333% - 15px)
+                                margin-bottom: rem-calc(50px)
+                                opacity: 0
+                                +long-transition()
+                                &.active
+                                    opacity: 1
+                                +xl-block()
+                                    margin-bottom: 0
+                                    flex: auto
+                                
+                        &__range
+                            display: none
+                            margin-bottom: rem-calc(25px)
+                            +xl-block()
+                                display: block
+                            .range
+                                &::-webkit-slider-thumb
+                                    width: rem-calc(90px)
+                                &::-moz-range-thumb
+                                    width: rem-calc(90px)
+                                &::-ms-track
+                                    width: rem-calc(90px)
+                        &__buttons
+                            display: none
+                            +xl-block()
+                                display: block
+                            .button
+                                margin-left: auto
+                                .icon
+                                    max-width: rem-calc(18px)
+                                    max-height: em-calc(18px)
+                    &:hover
+                        .tablist__link
+                            font-family: $HelveticaBold
+                            color: set-color(darken-blue)
+                            +lg-block()
+                                font-family: $HelveticaMedium
+                                font-size: rem-calc(24px)
+                                line-height: rem-calc(30px)
+                            +mobile_s-block()
+                                font-size: rem-calc(18px)
+                                line-height: rem-calc(22px) 
+                    &.active
+                        .icon
+                            opacity: .15
+                            margin-right: rem-calc(-50px)
+                            +lg-block()
+                                margin-right: 0
+                        .tablist__link
+                            font-family: $HelveticaBold
+                            color: set-color(darken-blue)
+                            +lg-block()
+                                font-family: $HelveticaMedium
+                                font-size: rem-calc(24px)
+                                line-height: rem-calc(30px)
+                            +mobile_s-block()
+                                font-size: rem-calc(18px)
+                                line-height: rem-calc(22px)
+                &__link
+                    display: block
+                    font-family: $HelveticaRoman
+                    line-height: 1
+                    color: set-color(text-color)
+                    +short-transition()
+                    +lg-block()
+                        flex: 0 1 calc(90% - 15px)
+    &__title
+        +col()
+        +size(4.5)
+        +size-small_desktop(5.5)
+        +size-lg(12)
+        +lg-block()
+            margin-bottom: rem-calc(30px)
+            order: 1
+        .title
+            +title(115px, 'right')
+            +md-block()
+                padding-right: rem-calc(80px)
+            &::before
+                +sm_desktop-block()
+                    top: rem-calc(22px)
+                +md-block()
+                    width: rem-calc(60px)
+            h2, 
+            h3
+                +sm_desktop-block()
+                    font-size: rem-calc(36px)
+                +md-block()
+                    font-size: rem-calc(32px)

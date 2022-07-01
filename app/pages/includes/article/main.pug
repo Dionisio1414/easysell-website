@@ -1,0 +1,42 @@
+section.blog.blog--article
+    .article-wrapper
+        .container
+            .row
+                .column
+                    .banner
+                        .banner__arrow
+                            img.arrow(src="./images/large-arrow.svg" alt="Large arrow")
+                        .wrapper
+                            .banner__controls
+                                a.button.button_prev(href="/blog.html")
+                                    .button__icon
+                                        svg.icon
+                                            use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                                        | Назад в блог
+                            .banner__content
+                                h1 Система управления взаимоотношениями с клиентами
+                            .banner__info
+                                .image
+                                    img.pic(src="./images/static/article-pic-1.png" alt="")
+                            .banner__marks
+                                a.banner__marks-link(href="#")
+                                    mark.mark Учебные материалы
+                                a.banner__marks-link(href="#")
+                                    mark.mark Управление
+                            .banner__socials
+                                ul.social-list
+                                    li.social-list__item
+                                        a.social-list__link.social-list__link--instagram(href="#")
+                                            svg.icon
+                                                use(xlink:href="./images/svg/sprite/sprite.svg#instagram")
+                                    li.social-list__item
+                                        a.social-list__link.social-list__link--telegram(href="#")
+                                            svg.icon
+                                                use(xlink:href="./images/svg/sprite/sprite.svg#telegram")
+                                    li.social-list__item
+                                        a.social-list__link.social-list__link--facebook(href="#")
+                                            svg.icon
+                                                use(xlink:href="./images/svg/sprite/sprite.svg#facebook")
+                .column
+                    .blog__picture
+                        img.picture(src="./images/static/article-pic-1.png" alt="Post picture")

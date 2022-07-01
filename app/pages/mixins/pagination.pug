@@ -1,0 +1,47 @@
+//- Pagination
+mixin pagination(amount, active, ellipsis, last, arrows)
+    //- amount - amount of displayed numbers +1 prior ellipsis
+    //- active - active number
+    //- ellipsis - number to be replaced by ellipsis
+    //- last - number after ellipsis
+    //- .icon-pagination-prev and .icon-pagination-next
+    .pagination
+        //- prev arrow
+        nav(aria-label="Blog navigation")
+
+            ul.pagination__list
+                //- before ellipsis
+                if (arrows === arrows)
+                    li.pagination__item.is-disabled
+                        a(href="#" title="Prev page").pagination__item-prev
+                            svg.icon
+                                use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+  
+                - for (var index = 1; index <= amount; index++)
+                    if (index === active)
+                        li.pagination__item.is-active
+                            a(href="#" title="Current page #{index}").pagination__item-link= index
+                    else if (index === ellipsis)
+                        li.pagination__item
+                            a(href="#" title="Show more").pagination__item-link.is-collapsed ...
+                    else
+                        li.pagination__item
+                            a(href="#" title="Go to page #{index}").pagination__item-link= index
+                //- after ellipsis
+                - for (var index = amount + 1; index <= last; index++)
+                    li.pagination__item
+                        a(href="#" title="Go to pagе #{index}").pagination__item-link= index
+
+                //- next arrow
+                if (arrows === arrows)
+                    li.pagination__item
+                        a(href="#" title="Next page").pagination__item-next
+                            svg.icon
+                                use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+
+//- Use example
+//- first part is 5 numbers
+//- 3 is active
+//- 4 is ellipsis
+//- 9 is the last number, starting from last number of first part (5)
+//- arrows - show prev/next arrows

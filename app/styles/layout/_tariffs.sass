@@ -1,0 +1,75 @@
+@import ../functions/rem-calc
+@import ../functions/set-color
+@import ../functions/pxToPercentage
+@import ../mixins/title
+
+.tariffs
+    margin-bottom: rem-calc(200px)
+    +lg-block()
+        margin-bottom: rem-calc(30px)
+    +sm-block()
+        margin-bottom: 0
+    + .integration
+        margin-top: 0
+    &__cards
+        position: relative
+        padding: 0px pxToPercentage(230, 1600)
+        +md_desktop-block()
+            padding: 0 pxToPercentage(175, 1600)
+        +small_desktop-block()
+            padding: 0 pxToPercentage(100, 1600)
+        +xl-block()
+            padding: 0 pxToPercentage(35, 1600)
+        +lg-block()
+            padding: 0
+        &::before
+            content: ""
+            position: absolute
+            top: -50px
+            left: 0
+            right: 0
+            background: set-color(dark-blue)
+            border-radius: rem-calc(20px)
+            width: 100%
+            height: rem-calc(198px)
+            +sm-block()
+                top: 0
+        .tns-ovh
+            min-height: rem-calc(550px)
+            .tns-inner
+                padding-top: rem-calc(20px)
+        .tariff-slider
+            display: flex
+            justify-content: space-between
+            align-items: stretch
+            flex-wrap: wrap
+            &__item
+                flex: 0 1 calc(25% - 15px)
+                .tariff
+                    height: 100%
+                    &__buttons
+                        .button
+                            padding: rem-calc(13px) rem-calc(40px)
+    .title
+        +col()
+        +title(200px, 'left')
+        margin-bottom: rem-calc(106px)
+        +xl-block()
+            margin-bottom: rem-calc(90px)
+            &::before
+                top: 19px
+            h1,
+            h2
+                font-size: rem-calc(36px)
+        +md-block()
+            padding-left: rem-calc(80px)
+            margin-bottom: rem-calc(75px)
+            &::before
+                width: rem-calc(60px)
+            h1,
+            h2
+                font-size: rem-calc(32px)
+        +sm-block()
+            margin-bottom: rem-calc(30px)
+    .container
+        +wrapper()

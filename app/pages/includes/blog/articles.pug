@@ -1,0 +1,40 @@
+- let list = ["Учебные материалы (15)", "Инновации (745)", "Управление (78)", "Продажи (46)", "Клиенты (5)", "Маркетинг (36)"];
+
+include ../../mixins/sidebar
+include ../../mixins/pagination
+
+section.articles
+    .container
+        .row
+            .articles-column
+                .articles-wrapper
+                    each title in articleTitles
+                        article.article
+                            .article-column
+                                a.article__link(href="/article.html")
+                                    img.picture(src="./images/static/article-pic-1.png" alt="Article picture")
+                            .article-column
+                                .article__information
+                                    .marks
+                                        mark.mark Учебные материалы
+                                        .date
+                                            svg.icon
+                                                use(xlink:href="./images/svg/sprite/sprite.svg#calendar")
+                                            time 29.09.2020
+                                    .caption
+                                        h2 
+                                            a(href="/article.html")= title
+                                    .text
+                                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet neque ut ullamcorper nunc. Enim neque massa ipsum senectus nulla. Quisque vulputate quis cras eros, justo. Augue gravida nisl nisl et. Leo amet, tempus ultrices est.
+                +pagination(5, 1, 4, 5, arrows)
+            .articles-column
+                .sidebar-wrap
+                    +sidebar(list, true, false, true, true, false)
+                    .subscribe
+                        form.form
+                            .form-caption Подпишитесь на рассылку новостей EasySell
+                            .form-row
+                                input(type="email" name="email" placeholder="Ваш Email")
+                            .form-buttons
+                                button.button.button_orange(type="submit") Подписаться
+    

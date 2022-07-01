@@ -1,0 +1,136 @@
+@import ../functions/em-calc
+@import ../functions/set-color
+@import ../mixins/title
+
+.clients
+    margin-bottom: em-calc(100px)
+    &__slider
+        &-range
+            @-moz-document url-prefix()
+                padding: 0 em-calc(40px)
+    .swiper-container
+        padding-right: rem-calc(75px)
+        padding-bottom: rem-calc(45px)
+        +sm-block()
+            padding-right: 0
+            overflow: visible
+        .swiper-wrapper
+            padding-bottom: rem-calc(75px)
+            .swiper-slide-prev
+                transition: all .4s
+                +sm-block()
+                    opacity: 0
+            .swiper-slide-next
+                transition: all .4s
+                +sm-block()
+                    opacity: 0
+            .swiper-slide
+                opacity: 0
+                transition: opacity .2s
+                &.swiper-slide-visible
+                    opacity: 1
+    .tns-outer
+        .tns-nav
+            display: none
+        .tns-ovh
+            padding-bottom: em-calc(75px)
+            padding-right: em-calc(75px)
+            +md-block()
+                padding-bottom: em-calc(60px)
+    .container
+        +wrapper()
+        .row
+            +row-flex()
+            .col
+                +col()
+                +size(12)
+            .title
+                +title(250px, 'right')
+                margin-left: auto
+                margin-bottom: em-calc(56px)
+                +xl-block()
+                    margin-bottom: rem-calc(30px)
+                    &::before
+                        top: 22px
+                    h1,
+                    h2
+                        font-size: rem-calc(36px)
+                +md-block()
+                    padding-right: rem-calc(80px)
+                    &::before
+                        width: rem-calc(60px)
+                +md-block()
+                    h1,
+                    h2
+                        font-size: rem-calc(32px)
+    .client
+        position: relative
+        &__background
+            background-color: set-color(blue-light)
+            background-image: url(../images/quotes.svg)
+            background-repeat: no-repeat
+            background-size: em-calc(74px) em-calc(55px)
+            background-position: em-calc(10px) em-calc(10px)
+            position: absolute
+            top: 0
+            left: 0
+            border-radius: em-calc(20px)
+            width: calc(100% - 110px)
+            height: em-calc(198px)
+            +md-block()
+                //left: 15px
+                //width: 100%
+                width: calc(100% - 14px)
+        &__content
+            position: relative
+            top: 40px
+            left: 40px
+            background: #fff
+            padding: em-calc(40px)
+            border-radius: em-calc(10px)
+            box-shadow: $boxshadow
+            z-index: 2
+            cursor: grab
+            +lg-block()
+                padding: rem-calc(25px)
+            +sm-block()
+                padding: rem-calc(15px)
+                max-width: calc(100% - 40px)
+            .user
+                display: flex
+                align-items: center
+                margin-bottom: em-calc(40px)
+                +md-block()
+                    margin-bottom: rem-calc(25px)
+                +sm-block()
+                    margin-bottom: rem-calc(20px)
+                &__avatar
+                    border-radius: 50%
+                    margin-right: em-calc(30px)
+                    max-width: em-calc(64px)
+                    max-height: em-calc(64px)
+                    overflow: hidden
+                    +lg-block()
+                        margin-right: rem-calc(20px)
+                    +sm-block()
+                        max-width: em-calc(55px)
+                        max-height: em-calc(55px)
+                        margin-right: em-calc(15px)
+                    .avatar
+                        width: 100%
+                &__information
+                    .fullname
+                        font-family: $HelveticaBold
+                        +sm-block()
+                            font-size: rem-calc(15px)
+                    .place
+                        color: set-color(lighten-gray)
+                        +sm-block()
+                            font-size: rem-calc(15px)
+            .description
+                font-family: $HelveticaLight
+                color: set-color(text-color)
+                +sm-block()
+                    font-size: rem-calc(15px)
+            
+            

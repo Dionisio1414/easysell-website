@@ -1,0 +1,97 @@
+@import ../functions/em-calc
+@import ../functions/set-color
+@import ../mixins/long-transition
+
+.tariff
+    position: relative
+    text-align: center
+    cursor: pointer
+    &::before
+        content: ""
+        position: absolute
+        bottom: -20px
+        left: 0
+        right: 0
+        width: 100%
+        height: 35px
+    &:hover
+        .wrapper
+            transform: translateY(-15px)
+        .tariff__buttons
+            top: calc(100% + 20px)
+            opacity: 1
+    .wrapper
+        position: relative
+        display: flex
+        flex-direction: column
+        background: #fff
+        border-radius: em-calc(10px)
+        padding: em-calc(35px) em-calc(15px)
+        box-shadow: $boxshadow
+        height: 100%
+        min-height: 100%
+        z-index: 1
+        transition: .75s ease-in-out
+        +md-block()
+            padding: rem-calc(30px) rem-calc(15px)
+    &__title
+        position: relative
+        padding-bottom: em-calc(27px)
+        margin-bottom: em-calc(27px)
+        +md-block()
+            padding-bottom: em-calc(20px)
+            margin-bottom: em-calc(25px)
+        &::before
+            content: ""
+            background: set-color(orange)
+            position: absolute
+            left: 50%
+            bottom: 0
+            transform: translateX(-50%)
+            width: em-calc(91px)
+            height: 3px
+        h4
+            font-size: em-calc(22px)
+            color: set-color(dark-blue)
+            +md-block()
+                font-size: em-calc(14px)
+    &__price
+        margin-bottom: em-calc(35px)
+        +md-block()
+            margin-bottom: em-calc(20px)
+        .price
+            font-family: $HelveticaBold
+            font-size: em-calc(34px)
+            color: set-color(link-color)
+            +md-block()
+                font-size: em-calc(28px)
+        .vallet
+            font-family: $HelveticaMedium
+            color: set-color(dark-blue)
+    &__list
+        padding: 0
+        margin: 0 0 em-calc(30px) 0
+        list-style-type: none
+        &-item
+            font-size: em-calc(15px)
+            line-height: em-calc(18px)
+            color: set-color(grays)
+            &:not(:last-child)
+                margin-bottom: em-calc(15px)
+            &--disabled
+                color: rgba(set-color(grays), .3)
+    &__links
+        margin-top: auto
+    &__btns
+        .button
+            display: block
+            padding: em-calc(11px) 0
+    &__buttons
+        position: absolute
+        opacity: 0
+        top: 0
+        width: 100%
+        transition: .75s ease-in-out
+        .button
+            display: block
+            line-height: 1

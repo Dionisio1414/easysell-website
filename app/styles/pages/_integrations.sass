@@ -1,0 +1,341 @@
+@import ../functions/set-color
+@import ../functions/rem-calc
+@import ../functions/pxToPercentage
+@import ../mixins/short-transition
+    
+.integrations
+    margin-bottom: rem-calc(180px)
+    height: calc(100vh - 130px)
+    min-height: calc(100vh - 130px)
+    +xl-block()
+        height: auto
+        min-height: auto
+        margin-bottom: rem-calc(45px)
+        overflow: hidden
+    .container
+        +wrapper()
+        height: 100%
+        .row
+            +row-flex()
+            height: 100%
+            .column
+                +col()
+                &:first-child
+                    +size(5.22)
+                    +size-xl(12)
+                    +xl-block()
+                        margin: 0
+                        width: 100%
+                &:last-child
+                    position: relative
+                    align-items: center
+                    background-repeat: no-repeat
+                    background-size: rem-calc(607px) rem-calc(162px)
+                    background-position: right 85%
+                    +size(6.78)
+                    +size-xl(12)
+                    +xl-block()
+                        display: none
+    &-wrapper
+        position: absolute
+        left: -10%
+        top: calc(50% - 60px)
+        transform: translateY(-50%)
+        z-index: 6
+        &__technologies
+            .technologies-row
+                position: relative
+                display: grid               
+                &:nth-child(odd)
+                    grid-template-columns: repeat(4, 1fr)
+                    grid-gap: pxToPercentage(135, 900)
+                    +lg-block()
+                        top: rem-calc(88px)
+                        grid-template-columns: repeat(7, 13%)
+                    +md-block()
+                        top: rem-calc(20px)
+                &:nth-child(even)
+                    grid-template-columns: repeat(7, 1fr)
+                    +lg-block()
+                        top: rem-calc(104px)
+                        grid-template-columns: repeat(7, 14%)
+                    +md-block()
+                        top: rem-calc(40px)
+                    .technologies-row__item
+                        &:first-child
+                            grid-column: 2 / 3
+                        &:nth-child(2)
+                            grid-column: 4 / 5
+                        &:last-child
+                            grid-column: 6 / 7
+                &:not(:last-child)
+                    margin-bottom: rem-calc(40px)
+                    +md-block()
+                        margin-bottom: 0
+                &__item
+                    background: #fff
+                    border-radius: rem-calc(10px)
+                    padding: rem-calc(25px)
+                    box-shadow: $boxshadow
+                    max-width: 135px
+                    max-height: 135px
+                    +sm_desktop-block()
+                        padding: rem-calc(15px)
+                    +sm-block()
+                        padding: rem-calc(5px)
+                    +lg-block()
+                        max-height: 105px
+                        max-width: 105px
+                    +md-block()
+                        max-height: 50px
+                        max-width: 50px
+                    img
+                        width: 100%
+                        height: 100%
+                        object-fit: contain
+    &-content
+        position: static!important
+        margin-bottom: rem-calc(100px)
+        .container
+            +wrapper()
+            .row
+                +row-flex()
+        &__column
+            position: relative
+            &:first-child
+                +col()
+                +size(3)
+                +size-sm_desktop(4)
+                +size-xl(5)
+                +shift-right(1)
+                +shift-small_desktop-right(0)
+                +lg-block()
+                    display: none
+            &:last-child
+                +col()
+                +size(8)
+                +size-small_desktop(9)
+                +size-sm_desktop(8)
+                +size-xl(7)
+                +size-lg(12)
+            .pagination
+                margin: 0
+            .integrations-grid
+                display: flex
+                //align-items: center
+                flex-wrap: wrap
+                margin-bottom: rem-calc(50px)
+                +md-block()
+                  justify-content: space-between
+                  margin-bottom: 0
+                &__item
+                    +col()
+                    +size(4)
+                    +md-block()
+                      width: 46%
+                      margin: 0 0 50px 0!important
+                      &:not(:nth-last-child(2n+2))
+                        margin-right: 21px
+                    &:not(:nth-last-child(-n+3))
+                        margin-bottom: rem-calc(70px)
+                    &:nth-child(3n)
+                        .integration-card
+                            .integration-card
+                                &-popup
+                                    left: auto
+                                    right: rem-calc(-40px)
+                                    .picture
+                                        margin-left: auto
+                                        margin-right: rem-calc(30px)
+                                        +md-block()
+                                          margin-left: 0
+                                          margin-right: 0
+                                &-arrow
+                                    &.active
+                                        right: rem-calc(-80px)
+                    .integration-card
+                        position: relative
+                        padding-right: rem-calc(50px)
+                        +md-block()
+                          padding-right: 0
+                        &-picture
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            background: #fff
+                            box-shadow: $boxshadow
+                            border-radius: 10px
+                            padding: rem-calc(25px)
+                            max-width: rem-calc(200px)
+                            max-height: rem-calc(200px)
+                            min-height: rem-calc(200px)
+                            +md-block()
+                              max-height: rem-calc(162px)
+                              min-height: rem-calc(162px)
+                        &-arrow
+                            position: relative
+                            text-align: right
+                            +short-transition()
+                            +md-block()
+                              position: absolute
+                              bottom: 0
+                              right: 0
+                              transform: rotate(90deg)
+                            .btn-arrow
+                                margin: 0
+                                padding: 0
+                                border: none
+                                line-height: 0
+                                +short-transition()
+                                .arrow
+                                    fill: set-color(arrow-color)
+                                    max-width: rem-calc(55px)
+                                    max-height: rem-calc(30px)
+                                    +md-block()
+                                      max-width: rem-calc(46px)
+                                      max-height: rem-calc(25px)
+                            &.active
+                                top: rem-calc(-80px)
+                                z-index: 18
+                                +md-block()
+                                  display: none
+                                .btn-arrow
+                                    transform: rotate(90deg)
+                        &-content
+                          +md-block()
+                            margin-top: 20px
+                            .caption
+                                margin-bottom: rem-calc(20px)
+                                padding-right: rem-calc(40px)
+                                h2
+                                    font-family: $HelveticaMedium
+                                    font-size: rem-calc(18px)
+                                    color: set-color(dark-blue)
+                                    font-weight: 550
+                            .description
+                              +md-block()
+                                display: none
+                                p
+                                    font-family: $HelveticaLight
+                                    line-height: rem-calc(22px)
+                                    margin: 0
+                                    color: set-color(grays)
+                        &-popup
+                            display: none
+                            background: #fff
+                            position: absolute
+                            top: 0
+                            left: rem-calc(-40px)
+                            border-radius: rem-calc(10px)
+                            padding: 0 rem-calc(40px) rem-calc(50px) rem-calc(40px)
+                            box-shadow: $boxshadow
+                            min-width: rem-calc(715px)
+                            min-height: rem-calc(538px)
+                            +md-block()
+                              position: fixed
+                              left: 0!important
+                              right: 0!important
+                              top: 50%
+                              transform: translateY(-50%)
+                              padding: 0 17px 0 17px
+                              max-width: 100%
+                              min-width: 100%
+                            &.active
+                                display: block
+                                z-index: 17
+                            .picture
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                                background: #fff
+                                box-shadow: $boxshadow
+                                border-radius: 10px
+                                padding: rem-calc(25px)
+                                max-width: rem-calc(200px)
+                                max-height: rem-calc(200px)
+                                min-height: rem-calc(200px)
+                                margin-bottom: rem-calc(40px)
+                                margin-top: rem-calc(-80px)
+                                +md-block
+                                  position: relative
+                            .integration-card-arrow
+                                position: absolute
+                                right: -70px
+                                bottom: 10px
+                                transform: rotate(-90deg)
+                            .caption
+                                margin-bottom: rem-calc(30px)
+                                max-width: rem-calc(270px) 
+                                h2
+                                    font-family: $HelveticaMedium
+                                    font-size: rem-calc(28px)
+                                    color: set-color(dark-blue)
+                            .tab
+                                &-list
+                                    display: flex
+                                    align-items: center
+                                    margin-bottom: rem-calc(15px)
+                                    &-item
+                                        position: relative
+                                        font-family: $HelveticaMedium
+                                        font-size: rem-calc(18px)
+                                        line-height: rem-calc(23px)
+                                        padding-bottom: rem-calc(5px)
+                                        color: set-color(accent-light)
+                                        cursor: pointer
+                                        +short-transition()
+                                        +md-block()
+                                          font-size: rem-calc(16px)
+                                        &:not(:last-child)
+                                            margin-right: rem-calc(100px)
+                                            +md-block()
+                                              margin-right: 40px !important
+                                        &::before
+                                            content: ""
+                                            background: set-color(accent-light)
+                                            position: absolute
+                                            bottom: 0                
+                                            left: 0
+                                            right: 0
+                                            width: 100%
+                                            height: 2px
+                                            opacity: 0
+                                            +short-transition()
+                                        &:hover,
+                                        &.active
+                                            color: set-color(dark-blue)
+                                            &::before
+                                                opacity: 1
+                                &-content
+                                    &-item
+                                        position: relative
+                                        bottom: rem-calc(-20px)
+                                        opacity: 0
+                                        height: 0
+                                        overflow: hidden
+                                        transition-property: opacity
+                                        +short-transition()
+                                        .description
+                                            font-family: $HelveticaLight
+                                            line-height: rem-calc(22px)
+                                            padding-right: rem-calc(18px)
+                                            color: set-color(grays)
+                                            overflow-y: auto
+                                            max-height: rem-calc(176px)
+                                            &::-webkit-scrollbar
+                                                width: 2px
+                                            &::-webkit-scrollbar-track
+                                                background-color: transparent
+                                            &::-webkit-scrollbar-thumb
+                                                background-color: set-color(arrow-color)
+                                        &.active
+                                            bottom: 0
+                                            opacity: 1
+                                            height: auto
+        
+        .sidebar
+            margin-bottom: 0!important
+            position: sticky
+            top: 100px
+
+

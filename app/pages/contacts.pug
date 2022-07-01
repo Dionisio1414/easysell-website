@@ -1,0 +1,37 @@
+extends common/layout
+block content
+    section.contacts
+        .container
+            .row
+                .column
+                    .banner
+                        .banner__arrow
+                            img.arrow(src="./images/large-arrow.svg" alt="Large arrow")
+                        .wrapper
+                            .banner__controls
+                                a.button.button_prev(href="#")
+                                    .button__icon
+                                        svg.icon
+                                            use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                            .banner__content
+                                h1 Свяжитесь с нашей командой поддержки и продаж
+                                p Возможно ответ на ваш вопрос уже есть здесь: 
+                                    a(href="#") Руководство по продукту и учебные материалы
+                .column
+                    .contacts__form
+                        form.form
+                            .form__left
+                                .form-row
+                                    select#question(name="question")
+                                        each val in ["Я не понимаю как это работает", "Вопрос по поводу оплаты", "Кажется я нашел баг", "Пожелания", "Другое"]
+                                            option(value= val)= val
+                                .form-row
+                                    label(for="message") Опишите вашу проблему или вопрос:
+                                    textarea(name="message" rows="10")
+                            .form__right
+                                .form-row
+                                    input(type="text" name="name" placeholder="Ваше имя")
+                                .form-row
+                                    input(type="email" name="email" placeholder="Ваш email")
+                                .form-row
+                                    button.button.button_orange(type="submit") Отправить вопрос

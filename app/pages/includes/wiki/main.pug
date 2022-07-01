@@ -1,0 +1,64 @@
+- let functionalTabs = [ {product: "Товары"}, {crm: "CRM"}, {doc: "Документы"}, {money: "Деньги"}, {marketing: "Маркетинг"}, {feedback: "Отчеты"}, {basket: "Интернет магазин"}, {extends: "Расширения"}, {product: "Товары"}, {crm: "CRM"}, {doc: "Документы"}, {money: "Деньги"}, {marketing: "Маркетинг"}, {feedback: "Отчеты"}, {basket: "Интернет магазин"}, {extends: "Расширения"}, {product: "Товары"}, {crm: "CRM"}, {doc: "Документы"}, {money: "Деньги"}, {marketing: "Маркетинг"}, {feedback: "Отчеты"}, {basket: "Интернет магазин"}, {extends: "Расширения"} ];
+
+section.wiki
+    .container
+        .row
+            .wiki-controls
+                a.button.button_prev(href="#")
+                    .button__icon
+                        svg.icon
+                            use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                        | Назад
+    .wiki-slider
+        .wiki-slider__item
+            img.picture(src="./images/static/main-banner-bg.png" alt="Slider picture")
+        .wiki-slider__item
+            img.picture(src="./images/static/main-banner-bg.png" alt="Slider picture")
+        .wiki-slider__item
+            img.picture(src="./images/static/main-banner-bg.png" alt="Slider picture")
+    .wiki-banner
+        .wiki-banner__top
+            .banner-arrow
+                img.arrow(src="./images/large-arrow.svg" alt="Large arrow")
+            .container
+                .row
+                    .wiki-content
+                        .buttons
+                            a.button.button_prev(href="#")
+                                .button__icon
+                                    svg.icon
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                                    | Назад 
+                        .caption
+                            h1 Руководство по продукту и учебные материалы
+                        .description
+                            p Все, что нужно знать о покупке, использовании и настройке EasySell.
+                        .pictures
+                            .pictures__item
+                                img.picture(src="./images/static/main-banner-bg.png" alt="Wiki picture")
+                            .pictures__item
+                                img.picture(src="./images/static/main-banner-bg.png" alt="Wiki picture")
+                    .wiki-tabs
+                        .tabs.swiper-container
+                            .tabs__list.swiper-wrapper
+                                each val, index in functionalTabs
+                                    each name, icon in val
+                                        if (index === 0)
+                                            .tabs__list-item.active.swiper-slide
+                                                .icon-wrap
+                                                    svg.icon
+                                                        use(xlink:href=`./images/svg/sprite/sprite.svg#icon-${icon}`)
+                                                span.text= name   
+                                        else
+                                            .tabs__list-item.swiper-slide
+                                                .icon-wrap
+                                                    svg.icon
+                                                        use(xlink:href=`./images/svg/sprite/sprite.svg#icon-${icon}`)
+                                                span.text= name
+        .wiki-banner__bottom
+            .container
+                .row
+                    .search
+                        .search__field
+                            input(type="search" name="search" placeholder="Поиск")
+                            button.clear(type="button")

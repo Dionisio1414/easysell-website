@@ -1,0 +1,8 @@
+mixin benefit(title, description, icon)
+    .benefit
+        .benefit__picture
+            img.picture(src=`./images/svg/${icon}.svg`)
+        .benefit__title= title
+        .benefit__description= description
+        .benefit__buttons
+            a.button.button_link(href="#") Подробнее

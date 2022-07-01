@@ -1,0 +1,46 @@
+- var cols = [ {title: "О системе EasySell", items: ["Преимущества", "Партнеры"]}, {title: "Функционал", items: ["CRM", "Интеграции"]}, {title: "Тарифы", items: ["Поддержка", "Руководство по продукту"]}, {title: "Вопросы и ответы", items: ["Контакты", "Политика конфиденциальности"]}]
+
+footer.footer
+    .container
+        .row
+            .footer__contacts
+                .footer-logo
+                    a(href="index.html" class="logo")
+                        img(class="pic" src="./images/footer-logo.svg" alt="Footer logo")
+                    button(type="button" class="expand-button")
+                        img(class="expand-icon" src="./images/svg/rotate-arrows.svg" alt="Expand icon")
+                .expand-wrapper
+                    .contact-list
+                        ul.list
+                            li.list__item
+                                a(href="tel:+380667859685" class="link") +38 (066) 785-96-85
+                            li.list__item
+                                a(href="tel:+380667859685" class="link") +38 (066) 785-96-85
+                            li.list__item
+                                a(href="mailto:Support@EasySell.com" class="link") Support@EasySell.com
+                    .social-list
+                        ul.list
+                            li.list__item
+                                a(href="#" class="link")
+                                    svg.icon
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#instagram")
+                            li.list__item
+                                a(href="#" class="link")
+                                    svg.icon
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#telegram")
+                            li.list__item
+                                a(href="#" class="link")
+                                    svg.icon
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#youtube")
+            .footer__navigation
+                .navigation
+                    each val, key in cols
+                        .navigation__item
+                            h4.navigation-title #{val.title}
+                            ul.navigation-list
+                                each item in val.items
+                                    li.navigation-list__item
+                                        a(href="#" class="navigation-link")= item 
+                .copyright 
+                    span.copyright__text Copyright © 2019 EasySell. All rights reserved
+

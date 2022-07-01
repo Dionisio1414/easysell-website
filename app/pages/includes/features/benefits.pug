@@ -1,0 +1,73 @@
+- let tabValues = ["Автоматизация продаж", "Управление процессом", "Универсальный маркетинг", "Аналитика", "Управление производительностью", "Прогнозируемые продажи", "Кастомизация", "Автоматизация маркетинга", "Коллективное сотрудничество", "Мобильные приложения", "Безопасность", "Платформа для разработчиков"];
+
+include ../../mixins/benefit
+
+section.benefits
+    .container
+        .row
+            .benefits__content
+                .benefits__content-tabs
+                    ul.tablist
+                        each val, index in tabValues
+                            if (index === 0)
+                                li.tablist__item.active
+                                    a.tablist__link(href="#")= val
+                                    svg.icon
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                                    .benefits-information
+                                        .benefits-information__header
+                                            .caption Автоматизация продаж
+                                            .description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem. Tristique scelerisque donec aenean a laoreet tellus vivamus turpis suscipit. Dui lorem sit quam libero at ultrices pharetra cras mattis. 
+                                            .buttons 
+                                                a.button.button_link(href="#") Подробнее
+                                        .benefits-information__slider
+                                            .benefits-information__body
+                                                +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                                +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                                +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+                                                //-+benefit('Автоматизация рабочего процесса', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-4')
+                                                //-+benefit('Автоматизация рабочего процесса', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-4')
+                                                //-+benefit('Автоматизация рабочего процесса', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-4')
+                                        .benefits-information__range
+                                            input.range(type="range" step="1" min="1" max="5" value="1")
+                                        .benefits-information__buttons
+                                            button.button.button_next(type="button")
+                                                span.button__text Свернуть
+                                                span.button__icon
+                                                    svg.icon
+                                                        use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                            else
+                                li.tablist__item
+                                    a.tablist__link(href="#")= val
+                                    svg.icon
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#arrow")
+                                        use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+                                    .benefits-information
+                                        .benefits-information__header
+                                            .caption Автоматизация продаж
+                                            .description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem. Tristique scelerisque donec aenean a laoreet tellus vivamus turpis suscipit. Dui lorem sit quam libero at ultrices pharetra cras mattis. 
+                                            .buttons 
+                                                a.button.button_link(href="#") Подробнее
+                                        .benefits-information__slider
+                                            .benefits-information__body
+                                                +benefit('Ведущий менеджмент', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-1')
+                                                +benefit('Управление сделками', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-2')
+                                                +benefit('Управление контактами', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-3')
+                                                +benefit('Автоматизация рабочего процесса', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-4')
+                                                +benefit('Автоматизация рабочего процесса', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-4')
+                                                +benefit('Автоматизация рабочего процесса', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis orci, eget dui. In viverra ut facilisi adipiscing et, urna et, maecenas lorem.', 'benefit-icon-4')
+                                        .benefits-information__range
+                                            input.range(type="range" step="1" min="1" max="5" value="1")
+                                        .benefits-information__buttons
+                                            button.button.button_next(type="button")
+                                                span.button__text Свернуть 
+                                                span.button__icon
+                                                    svg.icon
+                                                        use(xlink:href="./images/svg/sprite/sprite.svg#prev-arrow")
+
+                .benefits__content-buttons
+                    a.button.button_orange(href="#") Начать бесплатно
+            .benefits__title
+                .title
+                    h2 Преимущества
